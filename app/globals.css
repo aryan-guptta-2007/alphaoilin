@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-radius: 0 !important;
+  }
+
+  body {
+    background-color: #F6F8F5;
+    color: #07171E;
+    font-family: var(--font-body), serif;
+  }
+}
+
+@layer utilities {
+  .bg-dark-grid {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
