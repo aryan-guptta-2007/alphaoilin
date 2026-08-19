@@ -74,7 +74,7 @@ export default function Home() {
         <Container className="relative z-10">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Hero Left Column (Sticky on Desktop) */}
-            <div className="lg:col-span-6 flex flex-col gap-5 pt-2 lg:sticky lg:top-24 lg:self-start">
+            <div className="lg:col-span-6 flex flex-col gap-5 pt-2 lg:sticky lg:top-[96px] lg:self-start">
               <Eyebrow>DUBAI TRADING DESK</Eyebrow>
 
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[42px] tracking-tight lg:tracking-[-0.025em] text-ink leading-tight sm:leading-none break-words max-w-full">
@@ -109,20 +109,22 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Four Labelled Trade Facts (Short, checkable facts) */}
-          <div className="mt-12 lg:mt-16 pt-8 border-t border-steel/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Four Labelled Trade Facts (28px padding, equal height, high WCAG AA contrast) */}
+          <div className="mt-16 pt-8 border-t border-steel/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {tradeFacts.map((tf, idx) => (
               <div
                 key={idx}
-                className="bg-mist/30 border-l-2 border-l-amber border-y border-r border-steel/20 p-4.5 flex flex-col gap-1.5 hover:border-steel/50 transition-colors"
+                className="bg-steel border-l-4 border-l-amber border border-steel/60 p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
               >
-                <span className="font-mono text-[10px] font-bold uppercase tracking-eyebrow text-slate">
-                  {tf.label}
-                </span>
-                <h3 className="font-display font-bold text-base text-ink">
-                  {tf.fact}
-                </h3>
-                <p className="font-body text-slate text-xs leading-relaxed font-light max-w-[65ch]">
+                <div className="flex flex-col gap-2">
+                  <span className="font-mono text-xs font-bold uppercase tracking-eyebrow text-amber">
+                    {tf.label}
+                  </span>
+                  <h3 className="font-display font-bold text-lg text-paper leading-snug">
+                    {tf.fact}
+                  </h3>
+                </div>
+                <p className="font-body text-mist text-sm leading-[1.6] font-light mt-3">
                   {tf.description}
                 </p>
               </div>
@@ -131,38 +133,40 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* "How We Work" Section with Subtle Dark Grid Texture */}
-      <section className="py-11 lg:py-16 bg-dark-gradient bg-dark-grid text-paper border-b border-steel">
+      {/* "How We Work" Section */}
+      <section className="py-11 lg:py-16 bg-paper border-b border-steel/15">
         <Container>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-2 max-w-[65ch]">
-              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-paper tracking-tight">
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
                 How an order moves
               </h2>
-              <p className="font-body text-mist text-base font-light leading-relaxed">
+              <p className="font-body text-slate text-base sm:text-[17px] leading-[1.6] font-light max-w-[65ch]">
                 From refinery procurement to laboratory testing and vessel chartering, we handle each stage of physical delivery.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               {howWeWorkSteps.map((step) => (
                 <div
                   key={step.stepNumber}
-                  className="bg-ink/70 border border-steel/80 p-6 flex flex-col gap-4 relative hover:border-steel transition-colors"
+                  className="bg-mist/40 border border-steel/30 p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
                 >
-                  <div className="flex items-center justify-between border-b border-steel/50 pb-3">
-                    <span className="font-mono text-xl font-extrabold text-steel/40">
-                      {step.stepNumber}
-                    </span>
+                  <div className="flex flex-col gap-3">
+                    <div className="border-b border-steel/15 pb-3">
+                      <span className="font-mono text-xl font-extrabold text-steel/40">
+                        {step.stepNumber}
+                      </span>
+                    </div>
+
+                    <h3 className="font-display font-bold text-xl text-ink">
+                      {step.title}
+                    </h3>
+
+                    <p className="font-body text-slate text-sm sm:text-base font-light leading-[1.6] max-w-[65ch]">
+                      {step.description}
+                    </p>
                   </div>
-
-                  <h3 className="font-display font-bold text-lg text-paper">
-                    {step.title}
-                  </h3>
-
-                  <p className="font-body text-mist text-sm font-light leading-[1.6] max-w-[65ch]">
-                    {step.description}
-                  </p>
                 </div>
               ))}
             </div>
