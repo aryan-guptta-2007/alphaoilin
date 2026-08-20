@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { distillationProducts, productsData } from "@/lib/products";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -18,8 +19,6 @@ export default function ProductsIndexPage() {
       <PageHero
         title="Refined oil products"
         description="Product directory ordered by distillation boiling range from lightest fractions to heavy residual products."
-        imageSrc="/images/lab-sample.jpg"
-        imageAlt="Laboratory oil sample testing analysis"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Products" },
@@ -32,6 +31,7 @@ export default function ProductsIndexPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {distillationProducts.map((p, idx) => {
               const detail = productsData[p.slug];
+              const isFirst = idx === 0;
               return (
                 <Link
                   key={p.slug}
@@ -54,6 +54,20 @@ export default function ProductsIndexPage() {
                       <span className="font-mono text-xs font-semibold text-amber bg-amber/10 px-2.5 py-0.5 border border-amber/30 shrink-0">
                         {p.tempRange}
                       </span>
+                    </div>
+
+                    {/* 3:2 Product Card Thumbnail */}
+                    <div className="relative w-full aspect-[3/2] overflow-hidden border border-rule bg-paper my-1">
+                      <Image
+                        src={p.imageSrc}
+                        alt={p.imageAlt}
+                        width={600}
+                        height={400}
+                        quality={80}
+                        priority={isFirst}
+                        loading={isFirst ? "eager" : "lazy"}
+                        className="object-cover w-full h-full grayscale-[0.2] sepia-[0.05] contrast-[1.05] group-hover:scale-[1.02] transition-transform duration-300"
+                      />
                     </div>
 
                     <h2 className="font-display font-extrabold text-xl sm:text-2xl text-ink group-hover:text-amber transition-colors">

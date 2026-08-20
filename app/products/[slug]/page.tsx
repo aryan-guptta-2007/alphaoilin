@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -55,8 +56,6 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         title={product.name}
         description={product.tagline}
         badge={`TEMP CUT: ${product.distillationTemp}`}
-        imageSrc="/images/lab-sample.jpg"
-        imageAlt="Laboratory oil sample testing analysis"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Products", href: "/products" },
@@ -119,6 +118,24 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
             {/* Main Body Column: Technical Description & Spec Tables */}
             <main className="lg:col-span-6 flex flex-col gap-8">
+              {/* Product Photograph (Top of Content Column, 3:2 Ratio) */}
+              <div className="flex flex-col gap-2">
+                <div className="relative w-full aspect-[3/2] overflow-hidden border border-rule bg-linen">
+                  <Image
+                    src={product.imageSrc}
+                    alt={product.imageAlt}
+                    width={900}
+                    height={600}
+                    quality={80}
+                    priority
+                    className="object-cover w-full h-full grayscale-[0.2] sepia-[0.05] contrast-[1.05]"
+                  />
+                </div>
+                <span className="font-mono text-xs text-slate">
+                  {product.imageCaption}
+                </span>
+              </div>
+
               {/* Intro Paragraphs */}
               <article className="flex flex-col gap-4 font-body text-base sm:text-lg text-slate leading-relaxed font-light max-w-[65ch]">
                 <h2 className="font-display font-bold text-xl sm:text-2xl text-ink tracking-tight mb-1">

@@ -6,6 +6,9 @@ export interface DistillationProduct {
   note: string;
   swatchColor: string;
   href: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageCaption: string;
 }
 
 export interface BaseOilGradeSpec {
@@ -36,6 +39,9 @@ export interface ProductDetail {
   name: string;
   tagline: string;
   distillationTemp: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageCaption: string;
   introParagraphs: string[];
   specTables: ProductSpecTable[];
   applications: string[];
@@ -55,6 +61,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "Steam cracking feedstock & high-octane blendstock",
     swatchColor: "#E5901C",
     href: "/products/naphtha",
+    imageSrc: "/images/products/naphtha.jpg",
+    imageAlt: "Petrochemical plant atmospheric distillation towers for virgin naphtha",
+    imageCaption: "Primary fractional distillation columns producing light and heavy virgin naphtha.",
   },
   {
     id: "gas-oil",
@@ -64,6 +73,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "10PPM ULSD & automotive/industrial gas oil",
     swatchColor: "#D9531E",
     href: "/products/gas-oil",
+    imageSrc: "/images/products/gas-oil.jpg",
+    imageAlt: "Gulf refinery gas oil storage tanks and distribution pipework",
+    imageCaption: "10PPM ULSD and gas oil D2 bulk storage at Gulf refining facility.",
   },
   {
     id: "hydrocarbon-oil",
@@ -73,6 +85,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "Aliphatic & aromatic hydrocarbon distillates",
     swatchColor: "#14618E",
     href: "/products/hydrocarbon-oil",
+    imageSrc: "/images/products/hydrocarbon-oil.jpg",
+    imageAlt: "Industrial chemical pipe rack and solvent drum storage",
+    imageCaption: "White spirit and aliphatic hydrocarbon solvent drum storage.",
   },
   {
     id: "base-oil",
@@ -82,6 +97,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "Group I virgin base stocks for lubricants & greases",
     swatchColor: "#3D5B66",
     href: "/products/base-oil",
+    imageSrc: "/images/products/base-oil.jpg",
+    imageAlt: "Amber virgin base oil sample tested in laboratory glass beaker",
+    imageCaption: "ASTM D445 kinematic viscosity testing on Group I base oil sample.",
   },
   {
     id: "rubber-process-oil",
@@ -91,6 +109,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "Aromatic & paraffinic elastomer processing aids",
     swatchColor: "#5E8C2A",
     href: "/products/rubber-process-oil",
+    imageSrc: "/images/products/rubber-process-oil.jpg",
+    imageAlt: "Industrial tyre vulcanization and rubber compound manufacturing",
+    imageCaption: "Aromatic and paraffinic rubber process oil blending for tire manufacturing.",
   },
   {
     id: "grease",
@@ -100,6 +121,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "NLGI 2 & 3 extreme pressure lubricating greases",
     swatchColor: "#E5901C",
     href: "/products/grease",
+    imageSrc: "/images/products/grease.jpg",
+    imageAlt: "High-temperature lithium complex grease applied to industrial bearings",
+    imageCaption: "Extreme-pressure NLGI Grade 2 lithium grease formulation.",
   },
   {
     id: "fuel-oil",
@@ -109,6 +133,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "Heavy residual fuel oil for power & bunkering",
     swatchColor: "#0F2C39",
     href: "/products/fuel-oil",
+    imageSrc: "/images/products/fuel-oil.jpg",
+    imageAlt: "Heavy fuel oil terminal pipeline manifold and loading arm",
+    imageCaption: "High-flow pipeline manifold for CST 180 and CST 380 marine fuel loading.",
   },
   {
     id: "bitumen",
@@ -118,6 +145,9 @@ export const distillationProducts: DistillationProduct[] = [
     note: "Penetration grade paving bitumen & oxidised asphalt",
     swatchColor: "#07171E",
     href: "/products/bitumen",
+    imageSrc: "/images/products/bitumen.jpg",
+    imageAlt: "Fresh black asphalt bitumen paving surface layer",
+    imageCaption: "Penetration grade 60/70 asphalt binder application for road paving.",
   },
 ];
 
@@ -211,6 +241,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Solvent Neutral Base Oils (SN 150, SN 500, BS 150)",
     tagline: "Group I virgin refined base stocks for industrial lubricants, automotive motor oils, and processing fluids.",
     distillationTemp: "300°C – 550°C",
+    imageSrc: "/images/products/base-oil.jpg",
+    imageAlt: "Amber virgin base oil sample tested in laboratory glass beaker",
+    imageCaption: "ASTM D445 kinematic viscosity testing on Group I base oil sample.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies Group I solvent neutral base oils processed from paraffinic crude oil cuts. Our base oils are refined through solvent extraction and dewaxing to deliver oxidation resistance, thermal stability, and low volatility.",
       "Available in standard viscosity grades—SN 150 (light distillate), SN 500 (medium-heavy distillate), and Bright Stock BS 150 (heavy residual stock)—our inventory caters to commercial blender operations, lubricant compounding plants, and chemical manufacturers.",
@@ -249,7 +282,6 @@ export const productsData: Record<string, ProductDetail> = {
       "Bulk Vessel Chartering (3,000 MT – 10,000 MT parcels)",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "Base Oil SN 150 Technical Data Sheet (TDS)", type: "PDF", size: "240 KB", url: "/docs/product-list.pdf" },
       { title: "Base Oil SN 500 Technical Data Sheet (TDS)", type: "PDF", size: "245 KB", url: "/docs/product-list.pdf" },
       { title: "Bright Stock BS 150 Specification Sheet", type: "PDF", size: "220 KB", url: "/docs/product-list.pdf" },
@@ -262,6 +294,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Penetration Grade Asphalt Bitumen (60/70 & 80/100)",
     tagline: "High-grade vacuum bottoms petroleum bitumen for highway construction, asphalt paving, and waterproofing membranes.",
     distillationTemp: "> 550°C",
+    imageSrc: "/images/products/bitumen.jpg",
+    imageAlt: "Fresh black asphalt bitumen paving surface layer",
+    imageCaption: "Penetration grade 60/70 asphalt binder application for road paving.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies premium penetration grade petroleum bitumen manufactured from vacuum distillation residue. Our bitumen grades 60/70 and 80/100 adhere to international EN 12591 and ASTM D946 standards.",
       "Recognized for superior viscoelastic properties, temperature susceptibility, and weather resistance, our asphalt bitumen is utilized extensively in heavy highway paving, airport runway construction, roofing felt manufacturing, and industrial waterproofing applications.",
@@ -299,7 +334,6 @@ export const productsData: Record<string, ProductDetail> = {
       "Bulk Liquid Bitumen Tankers (direct hot discharge)",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "Bitumen 60/70 Technical Data Sheet (TDS)", type: "PDF", size: "215 KB", url: "/docs/product-list.pdf" },
       { title: "Bitumen 80/100 Technical Data Sheet (TDS)", type: "PDF", size: "210 KB", url: "/docs/product-list.pdf" },
       { title: "Bitumen Quality Assurance & ISO Certificate", type: "PDF", size: "380 KB", url: "/docs/product-list.pdf" },
@@ -312,6 +346,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Marine & Industrial Fuel Oil (180 cSt & 380 cSt)",
     tagline: "Heavy residual fuel oils for commercial marine bunkering, industrial boilers, and thermal power generation.",
     distillationTemp: "350°C – 650°C",
+    imageSrc: "/images/products/fuel-oil.jpg",
+    imageAlt: "Heavy fuel oil terminal pipeline manifold and loading arm",
+    imageCaption: "High-flow pipeline manifold for CST 180 and CST 380 marine fuel loading.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC trades heavy residual fuel oils including Fuel Oil 180 cSt and Fuel Oil 380 cSt conforming to ISO 8217 RMG/RMK specifications.",
       "Processed from atmospheric and vacuum distillation bottoms, our heavy fuel oils deliver high calorific density, controlled kinematic viscosity, and low ash content for commercial shipping fleets, utility power plants, and heavy manufacturing furnaces.",
@@ -350,7 +387,6 @@ export const productsData: Record<string, ProductDetail> = {
       "Bulk Road Tankers (for industrial plant deliveries)",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "Marine Fuel Oil 180 cSt Spec Sheet (ISO 8217)", type: "PDF", size: "230 KB", url: "/docs/product-list.pdf" },
       { title: "Heavy Fuel Oil 380 cSt Spec Sheet (ISO 8217)", type: "PDF", size: "235 KB", url: "/docs/product-list.pdf" },
       { title: "Bunker Quality Compliance Certificate", type: "PDF", size: "340 KB", url: "/docs/product-list.pdf" },
@@ -363,6 +399,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Gas Oil D2 & Ultra-Low Sulfur Diesel (10 PPM)",
     tagline: "High-cetane distillate diesel fuel for commercial transportation, heavy plant machinery, and marine engines.",
     distillationTemp: "180°C – 360°C",
+    imageSrc: "/images/products/gas-oil.jpg",
+    imageAlt: "Gulf refinery gas oil storage tanks and distribution pipework",
+    imageCaption: "10PPM ULSD and gas oil D2 bulk storage at Gulf refining facility.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies Gas Oil D2 (L-0.2-62 / GO 0.2) and Ultra-Low Sulfur Diesel (ULSD 10PPM) meeting EN 590 and ASTM D975 specifications.",
       "Derived from middle distillate hydrotreating, our gas oil features high cetane index, superior cold filter plugging point (CFPP), and optimal lubricity to ensure peak combustion efficiency and low emissions in diesel engines.",
@@ -400,7 +439,6 @@ export const productsData: Record<string, ProductDetail> = {
       "New Steel Drums (208 L capacity for remote sites)",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "ULSD 10PPM Technical Data Sheet (EN 590)", type: "PDF", size: "225 KB", url: "/docs/product-list.pdf" },
       { title: "Gas Oil D2 Specification Sheet", type: "PDF", size: "220 KB", url: "/docs/product-list.pdf" },
       { title: "Diesel Fuel Laboratory Certificate of Analysis", type: "PDF", size: "310 KB", url: "/docs/product-list.pdf" },
@@ -413,6 +451,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Lithium Complex Industrial Greases (NLGI 2 & NLGI 3)",
     tagline: "Extreme pressure lithium complex thickener greases for heavy industrial bearings, automotive chassis, and high-temp plant machinery.",
     distillationTemp: "350°C – 500°C",
+    imageSrc: "/images/products/grease.jpg",
+    imageAlt: "High-temperature lithium complex grease applied to industrial bearings",
+    imageCaption: "Extreme-pressure NLGI Grade 2 lithium grease formulation.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC manufactures and distributes high-performance multi-purpose lithium complex greases formulated with high VI mineral base oils and extreme pressure (EP) additives.",
       "Available in NLGI 2 and NLGI 3 consistency grades, our industrial greases deliver exceptional mechanical shear stability, water washout resistance, and drop points exceeding 260°C for severe operating environments.",
@@ -450,7 +491,6 @@ export const productsData: Record<string, ProductDetail> = {
       "Bulk Tote Tanks / Fluid Kegs (900 kg bulk tote)",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "Lithium EP 2 Grease Technical Data Sheet (TDS)", type: "PDF", size: "205 KB", url: "/docs/product-list.pdf" },
       { title: "Lithium EP 3 Grease Technical Data Sheet (TDS)", type: "PDF", size: "200 KB", url: "/docs/product-list.pdf" },
       { title: "Industrial Grease Compatibility Chart", type: "PDF", size: "360 KB", url: "/docs/product-list.pdf" },
@@ -463,6 +503,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Virgin Naphtha (Light & Heavy Cut)",
     tagline: "Volatile light petroleum hydrocarbon cuts for petrochemical ethylene cracking and high-octane gasoline reforming.",
     distillationTemp: "30°C – 200°C",
+    imageSrc: "/images/products/naphtha.jpg",
+    imageAlt: "Petrochemical plant atmospheric distillation towers for virgin naphtha",
+    imageCaption: "Primary fractional distillation columns producing light and heavy virgin naphtha.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC trades premium virgin naphtha fractions derived from crude oil atmospheric distillation.",
       "Categorized into Light Virgin Naphtha (LVN) and Heavy Virgin Naphtha (HVN), our naphtha products provide optimal paraffin content for petrochemical steam crackers and high naphthenic values for catalytic reformers.",
@@ -499,7 +542,6 @@ export const productsData: Record<string, ProductDetail> = {
       "Specialized Inland Barge Transfer",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "Light Virgin Naphtha Technical Data Sheet (TDS)", type: "PDF", size: "210 KB", url: "/docs/product-list.pdf" },
       { title: "Heavy Virgin Naphtha Technical Data Sheet (TDS)", type: "PDF", size: "215 KB", url: "/docs/product-list.pdf" },
       { title: "Naphtha Chemical Composition Analysis", type: "PDF", size: "390 KB", url: "/docs/product-list.pdf" },
@@ -512,6 +554,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Rubber Process Oil (RPO Aromatic & Paraffinic)",
     tagline: "Specialized elastomer extenders and plasticizer oils for tire manufacturing, rubber compounds, and technical polymer processing.",
     distillationTemp: "320°C – 520°C",
+    imageSrc: "/images/products/rubber-process-oil.jpg",
+    imageAlt: "Industrial tyre vulcanization and rubber compound manufacturing",
+    imageCaption: "Aromatic and paraffinic rubber process oil blending for tire manufacturing.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies specialized Rubber Process Oils (RPO) formulated to improve workability, elasticity, and compounding performance in natural and synthetic rubber formulations.",
       "Our RPO range includes High Aromatic (RPO 110 / TDAE) and Heavy Paraffinic (RPO 140) process oils, providing excellent solvency with polymers, low PCA content, and optimal flash point safety.",
@@ -549,7 +594,6 @@ export const productsData: Record<string, ProductDetail> = {
       "Bulk Tanker Truck Direct Discharge",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "RPO Aromatic Technical Data Sheet (TDS)", type: "PDF", size: "230 KB", url: "/docs/product-list.pdf" },
       { title: "RPO Paraffinic Technical Data Sheet (TDS)", type: "PDF", size: "225 KB", url: "/docs/product-list.pdf" },
       { title: "Polycyclic Aromatic (PCA) Compliance Report", type: "PDF", size: "320 KB", url: "/docs/product-list.pdf" },
@@ -562,6 +606,9 @@ export const productsData: Record<string, ProductDetail> = {
     name: "Industrial Hydrocarbon Solvents & Distillates",
     tagline: "High-purity aliphatic and aromatic hydrocarbon cuts for industrial cleaning, chemical synthesis, and formulation solvents.",
     distillationTemp: "150°C – 300°C",
+    imageSrc: "/images/products/hydrocarbon-oil.jpg",
+    imageAlt: "Industrial chemical pipe rack and solvent drum storage",
+    imageCaption: "White spirit and aliphatic hydrocarbon solvent drum storage.",
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC distributes refined industrial hydrocarbon solvents and special boiling point (SBP) distillates formulated for precision industrial applications.",
       "Characterized by narrow boiling ranges, controlled aromatic content, and zero residue on evaporation, our hydrocarbon oils serve paint formulators, adhesive manufacturers, and industrial degreasing operations.",
@@ -599,7 +646,6 @@ export const productsData: Record<string, ProductDetail> = {
       "Bulk Tanker Delivery for regional clients",
     ],
     documents: [
-      // TODO: Replace placeholder # links with real PDF URLs
       { title: "White Spirit Technical Data Sheet (TDS)", type: "PDF", size: "215 KB", url: "/docs/product-list.pdf" },
       { title: "Solvent C9 Aromatic Spec Sheet", type: "PDF", size: "220 KB", url: "/docs/product-list.pdf" },
       { title: "Hydrocarbon Solvent Purity Certification", type: "PDF", size: "330 KB", url: "/docs/product-list.pdf" },
