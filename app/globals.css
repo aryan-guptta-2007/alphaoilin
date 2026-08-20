@@ -8,16 +8,16 @@
   }
 
   body {
-    background-color: #F6F8F5;
-    color: #07171E;
+    background-color: #FAF9F6;
+    color: #10222A;
     font-family: var(--font-body), serif;
   }
 }
 
 @layer utilities {
   .bg-dark-grid {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(16, 34, 42, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(16, 34, 42, 0.04) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 }

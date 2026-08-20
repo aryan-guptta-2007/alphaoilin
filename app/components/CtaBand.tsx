@@ -19,16 +19,16 @@ export const CtaBand: React.FC<CtaBandProps> = ({
 }) => {
   return (
     <section
-      className={`bg-dark-gradient text-paper py-16 border-t border-b border-steel/80 ${className}`.trim()}
+      className={`bg-linen text-ink py-11 lg:py-16 border-t border-b border-rule ${className}`.trim()}
     >
       <Container>
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="flex flex-col gap-3 max-w-3xl">
-            {eyebrow && <Eyebrow onDark>{eyebrow}</Eyebrow>}
-            <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-paper">
+            {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+            <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-ink">
               {headline}
             </h2>
-            <p className="font-body text-mist text-base sm:text-lg leading-relaxed font-light">
+            <p className="font-body text-slate text-base sm:text-lg leading-relaxed font-light">
               {supportingText}
             </p>
           </div>
@@ -38,7 +38,7 @@ export const CtaBand: React.FC<CtaBandProps> = ({
               Request a Quote
             </Button>
             <Button
-              variant="ghost"
+              variant="ink"
               href={siteConfig.whatsapp}
               target="_blank"
               rel="noopener noreferrer"

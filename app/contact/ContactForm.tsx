@@ -100,8 +100,8 @@ function ContactFormContent() {
   };
 
   return (
-    <div className="bg-paper border border-steel/20 p-6 sm:p-8 flex flex-col gap-6 shadow-sm">
-      <div className="border-b border-steel/15 pb-4">
+    <div className="bg-card border border-rule p-[28px] flex flex-col gap-6">
+      <div className="border-b border-rule pb-4">
         <h2 className="font-display font-extrabold text-2xl text-ink tracking-tight">
           Request a quote
         </h2>

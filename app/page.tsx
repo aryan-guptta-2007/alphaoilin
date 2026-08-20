@@ -110,21 +110,21 @@ export default function Home() {
           </div>
 
           {/* Four Labelled Trade Facts (28px padding, equal height, high WCAG AA contrast) */}
-          <div className="mt-16 pt-8 border-t border-steel/20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="mt-16 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {tradeFacts.map((tf, idx) => (
               <div
                 key={idx}
-                className="bg-steel border-l-4 border-l-amber border border-steel/60 p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
+                className="bg-linen border-l-4 border-l-amber border border-rule p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
               >
                 <div className="flex flex-col gap-2">
                   <span className="font-mono text-xs font-bold uppercase tracking-eyebrow text-amber">
                     {tf.label}
                   </span>
-                  <h3 className="font-display font-bold text-lg text-paper leading-snug">
+                  <h3 className="font-display font-bold text-lg text-ink leading-snug">
                     {tf.fact}
                   </h3>
                 </div>
-                <p className="font-body text-mist text-sm leading-[1.6] font-light mt-3">
+                <p className="font-body text-slate text-sm leading-[1.6] font-light mt-3">
                   {tf.description}
                 </p>
               </div>
@@ -134,7 +134,7 @@ export default function Home() {
       </section>
 
       {/* "How We Work" Section */}
-      <section className="py-11 lg:py-16 bg-paper border-b border-steel/15">
+      <section className="py-11 lg:py-16 bg-linen border-b border-rule">
         <Container>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-2 max-w-[65ch]">
@@ -150,11 +150,11 @@ export default function Home() {
               {howWeWorkSteps.map((step) => (
                 <div
                   key={step.stepNumber}
-                  className="bg-mist/40 border border-steel/30 p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
+                  className="bg-card border border-rule p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
                 >
                   <div className="flex flex-col gap-3">
-                    <div className="border-b border-steel/15 pb-3">
-                      <span className="font-mono text-xl font-extrabold text-steel/40">
+                    <div className="border-b border-rule pb-3">
+                      <span className="font-mono text-xl font-extrabold text-slate/50">
                         {step.stepNumber}
                       </span>
                     </div>
@@ -176,7 +176,7 @@ export default function Home() {
 
       {/* 380px Full-Bleed Duotone Image Band Section */}
       <section
-        className="relative w-full h-[380px] bg-ink overflow-hidden border-t border-b border-steel flex items-center justify-center"
+        className="relative w-full h-[380px] bg-paper overflow-hidden border-t border-b border-rule flex items-center justify-center"
         style={{ height: "380px", position: "relative" }}
       >
         <Image
@@ -185,12 +185,10 @@ export default function Home() {
           fill
           sizes="100vw"
           style={{ objectFit: "cover" }}
-          className="object-cover grayscale filter contrast-125 opacity-[0.18] mix-blend-multiply"
+          className="object-cover grayscale filter contrast-125 opacity-[0.06]"
         />
-        <div className="absolute inset-0 bg-ink/85 mix-blend-multiply pointer-events-none" />
-        <div className="absolute inset-0 bg-dark-grid pointer-events-none" />
         <Container className="relative z-10 text-center max-w-3xl px-4">
-          <p className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-paper tracking-tight">
+          <p className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-ink tracking-tight">
             Vessel chartering and bulk discharge port logistics across global trade routes.
           </p>
         </Container>

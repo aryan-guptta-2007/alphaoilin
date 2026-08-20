@@ -25,7 +25,7 @@ export default function AboutPage() {
       />
 
       {/* Corporate Overview Section (Narrow Reading Measure) */}
-      <section className="py-11 lg:py-16 bg-paper border-b border-steel/15">
+      <section className="py-11 lg:py-16 bg-paper border-b border-rule">
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7 flex flex-col gap-5 font-body text-slate text-sm sm:text-[17px] leading-[1.6] font-light">
@@ -50,7 +50,7 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="bg-mist/50 border border-steel/20 p-6 flex flex-col gap-5">
+              <div className="bg-linen border border-rule p-6 flex flex-col gap-5">
                 <h3 className="font-display font-bold text-lg text-ink">
                   Refinery contracts and batch testing
                 </h3>
@@ -72,7 +72,7 @@ export default function AboutPage() {
 
               {/* Steel Drums Warehouse Photo at Normal Contrast */}
               <div
-                className="relative w-full aspect-[3/2] overflow-hidden border border-steel/30 min-h-[280px]"
+                className="relative w-full aspect-[3/2] overflow-hidden border border-rule min-h-[280px]"
                 style={{ position: "relative", aspectRatio: "3/2" }}
               >
                 <Image
@@ -90,17 +90,17 @@ export default function AboutPage() {
       </section>
 
       {/* Why Documentation Matters Section */}
-      <section className="py-11 lg:py-16 bg-mist/30 border-b border-steel/15">
+      <section className="py-11 lg:py-16 bg-linen border-b border-rule">
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-5 bg-steel text-paper p-6 sm:p-8 border border-steel/80 flex flex-col gap-4">
+            <div className="lg:col-span-5 bg-ink text-paper p-6 sm:p-8 border border-ink flex flex-col gap-4">
               <h3 className="font-display font-extrabold text-xl sm:text-2xl text-paper">
                 Why paperwork matters in oil trading
               </h3>
               <p className="font-body text-mist text-sm leading-relaxed font-light max-w-[65ch]">
                 In lubricant blending and fuel combustion, off-spec viscosity or flash points cause equipment damage.
               </p>
-              <div className="font-mono text-xs text-amber uppercase tracking-eyebrow border-t border-steel/50 pt-4 flex flex-col gap-2">
+              <div className="font-mono text-xs text-amber uppercase tracking-eyebrow border-t border-mist/20 pt-4 flex flex-col gap-2 font-semibold">
                 <span>✓ CERTIFICATE OF ANALYSIS ON EVERY PARCEL</span>
                 <span>✓ ASTM & EN TEST METHODS</span>
                 <span>✓ BATCH RETENTION SAMPLES</span>
@@ -122,38 +122,40 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Three-Card "How We Work" Section with bg-dark-grid */}
-      <section className="py-11 lg:py-16 bg-dark-gradient bg-dark-grid text-paper">
+      {/* Three-Card "How We Work" Section */}
+      <section className="py-11 lg:py-16 bg-paper border-b border-rule">
         <Container>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-2 max-w-[65ch]">
-              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-paper tracking-tight">
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
                 How an order moves
               </h2>
-              <p className="font-body text-mist text-base font-light leading-relaxed">
+              <p className="font-body text-slate text-base font-light leading-relaxed">
                 A clear execution protocol for bulk oil supply and port clearance.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               {howWeWorkSteps.map((step) => (
                 <div
                   key={step.stepNumber}
-                  className="bg-ink/70 border border-steel/80 p-6 flex flex-col gap-4 relative"
+                  className="bg-card border border-rule p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
                 >
-                  <div className="flex items-center justify-between border-b border-steel/50 pb-3">
-                    <span className="font-mono text-xl font-extrabold text-steel/40">
-                      {step.stepNumber}
-                    </span>
+                  <div className="flex flex-col gap-3">
+                    <div className="border-b border-rule pb-3">
+                      <span className="font-mono text-xl font-extrabold text-slate/50">
+                        {step.stepNumber}
+                      </span>
+                    </div>
+
+                    <h3 className="font-display font-bold text-xl text-ink">
+                      {step.title}
+                    </h3>
+
+                    <p className="font-body text-slate text-sm sm:text-base font-light leading-[1.6] max-w-[65ch]">
+                      {step.description}
+                    </p>
                   </div>
-
-                  <h3 className="font-display font-bold text-lg text-paper">
-                    {step.title}
-                  </h3>
-
-                  <p className="font-body text-mist text-sm font-light leading-[1.6] max-w-[65ch]">
-                    {step.description}
-                  </p>
                 </div>
               ))}
             </div>

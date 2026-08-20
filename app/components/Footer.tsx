@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-steel text-paper border-t border-steel/80 pt-12 md:pt-16">
+    <footer className="bg-ink text-paper border-t border-rule/30 pt-12 md:pt-16">
       <Container className="pb-[80px]">
         {/* Three Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-16">

@@ -35,8 +35,8 @@ export const Button: React.FC<ButtonProps> = ({
     amber:
       "bg-amber text-ink hover:bg-[#d07e15] border-amber active:bg-[#ba6e0f]",
     ghost:
-      "bg-transparent text-mist border-mist/40 hover:border-mist hover:bg-mist/10 hover:text-white active:bg-mist/20",
-    ink: "bg-ink text-paper hover:bg-steel border-ink hover:border-steel active:bg-[#07171E]",
+      "bg-transparent text-ink border-rule hover:border-ink hover:bg-linen active:bg-linen",
+    ink: "bg-transparent text-ink border border-ink hover:bg-ink hover:text-paper active:bg-ink",
   };
 
   const combinedClasses = `${baseStyles} ${variantStyles[variant]} ${className}`.trim();

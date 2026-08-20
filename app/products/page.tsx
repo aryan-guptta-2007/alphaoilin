@@ -36,22 +36,22 @@ export default function ProductsIndexPage() {
                 <Link
                   key={p.slug}
                   href={p.href}
-                  className="group bg-mist/40 border border-steel/30 p-6 sm:p-8 flex flex-col justify-between h-full hover:border-amber transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                  className="group bg-linen border border-rule p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
                 >
                   <div className="flex flex-col gap-4">
-                    <div className="flex items-center justify-between border-b border-steel/15 pb-4">
+                    <div className="flex items-center justify-between border-b border-rule pb-4">
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-sm font-bold text-slate">
                           0{idx + 1}
                         </span>
                         <span
-                          className="w-3.5 h-3.5 border border-white/20 shrink-0"
+                          className="w-3.5 h-3.5 border border-black/10 shrink-0"
                           style={{ backgroundColor: p.swatchColor }}
                           aria-hidden="true"
                         />
                         <Eyebrow>{p.name.split("(")[0]}</Eyebrow>
                       </div>
-                      <span className="font-mono text-xs font-semibold text-amber bg-amber/10 px-2.5 py-0.5 border border-amber/20 shrink-0">
+                      <span className="font-mono text-xs font-semibold text-amber bg-amber/10 px-2.5 py-0.5 border border-amber/30 shrink-0">
                         {p.tempRange}
                       </span>
                     </div>
@@ -65,7 +65,7 @@ export default function ProductsIndexPage() {
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-6 border-t border-steel/15 flex items-center justify-between">
+                  <div className="pt-4 mt-6 border-t border-rule flex items-center justify-between">
                     <span className="font-display text-xs text-slate uppercase font-bold tracking-wider">
                       ASTM & EN TESTED
                     </span>

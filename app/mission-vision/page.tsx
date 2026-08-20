@@ -23,11 +23,11 @@ export default function MissionVisionPage() {
       />
 
       {/* Mission & Vision Section */}
-      <section className="py-11 lg:py-16 bg-paper border-b border-steel/15">
+      <section className="py-11 lg:py-16 bg-paper border-b border-rule">
         <Container>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Mission Card */}
-            <div className="bg-mist/40 border border-steel/20 p-6 sm:p-8 flex flex-col gap-4 border-t-4 border-t-flame">
+            <div className="bg-linen border border-rule p-[28px] flex flex-col gap-4 border-t-4 border-t-flame">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-ink tracking-tight">
                 Batch-verified oil supply
               </h2>
@@ -37,7 +37,7 @@ export default function MissionVisionPage() {
             </div>
 
             {/* Vision Card */}
-            <div className="bg-mist/40 border border-steel/20 p-6 sm:p-8 flex flex-col gap-4 border-t-4 border-t-amber">
+            <div className="bg-linen border border-rule p-[28px] flex flex-col gap-4 border-t-4 border-t-amber">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-ink tracking-tight">
                 Reliable Dubai energy trading
               </h2>
@@ -50,7 +50,7 @@ export default function MissionVisionPage() {
       </section>
 
       {/* Three Operating Principles */}
-      <section className="py-11 lg:py-16 bg-mist/30">
+      <section className="py-11 lg:py-16 bg-linen border-b border-rule">
         <Container>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-2 max-w-[65ch]">
@@ -64,7 +64,7 @@ export default function MissionVisionPage() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {/* Principle 01 */}
-              <div className="bg-paper border border-steel/20 p-6 flex flex-col gap-3 relative shadow-sm">
+              <div className="bg-card border border-rule p-[28px] flex flex-col gap-3 relative">
                 <span className="font-mono text-xs font-bold text-flame uppercase tracking-eyebrow">
                   PRINCIPLE 01
                 </span>
@@ -77,7 +77,7 @@ export default function MissionVisionPage() {
               </div>
 
               {/* Principle 02 */}
-              <div className="bg-paper border border-steel/20 p-6 flex flex-col gap-3 relative shadow-sm">
+              <div className="bg-card border border-rule p-[28px] flex flex-col gap-3 relative">
                 <span className="font-mono text-xs font-bold text-amber uppercase tracking-eyebrow">
                   PRINCIPLE 02
                 </span>
@@ -90,7 +90,7 @@ export default function MissionVisionPage() {
               </div>
 
               {/* Principle 03 */}
-              <div className="bg-paper border border-steel/20 p-6 flex flex-col gap-3 relative shadow-sm">
+              <div className="bg-card border border-rule p-[28px] flex flex-col gap-3 relative">
                 <span className="font-mono text-xs font-bold text-moss uppercase tracking-eyebrow">
                   PRINCIPLE 03
                 </span>

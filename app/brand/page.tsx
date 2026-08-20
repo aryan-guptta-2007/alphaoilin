@@ -13,15 +13,16 @@ export const metadata: Metadata = {
 
 export default function BrandShowcasePage() {
   const colors = [
-    { name: "Ink", hex: "#07171E", bg: "bg-ink", text: "text-white", role: "Primary text, dark backgrounds" },
-    { name: "Steel", hex: "#0F2C39", bg: "bg-steel", text: "text-white", role: "Table headers, borders, footer background" },
-    { name: "Slate", hex: "#3D5B66", bg: "bg-slate", text: "text-white", role: "Secondary copy, structural borders" },
-    { name: "Mist", hex: "#E9EDEA", bg: "bg-mist", text: "text-ink", role: "Light background panels, subtle highlights" },
-    { name: "Paper", hex: "#F6F8F5", bg: "bg-paper", text: "text-ink", role: "Default page background" },
+    { name: "Ink", hex: "#10222A", bg: "bg-ink", text: "text-paper", role: "Primary text, header and footer backgrounds" },
+    { name: "Slate", hex: "#4A6470", bg: "bg-slate", text: "text-paper", role: "Secondary copy, captions, and muted elements" },
+    { name: "Rule", hex: "#DDD8CD", bg: "bg-rule", text: "text-ink", role: "1px hairline borders site-wide" },
+    { name: "Linen", hex: "#F1EEE7", bg: "bg-linen", text: "text-ink", role: "Alternating section background, one step darker" },
+    { name: "Paper", hex: "#FAF9F6", bg: "bg-paper", text: "text-ink", role: "Default page background, warm off-white" },
+    { name: "Card", hex: "#FFFFFF", bg: "bg-card", text: "text-ink", role: "Card surface background" },
     { name: "Blue", hex: "#14618E", bg: "bg-blue", text: "text-white", role: "Secondary accent element" },
-    { name: "Moss", hex: "#5E8C2A", bg: "bg-moss", text: "text-white", role: "QA passed status & WhatsApp action" },
-    { name: "Amber", hex: "#E5901C", bg: "bg-amber", text: "text-ink", role: "Primary callout buttons, dark eyebrows" },
-    { name: "Flame", hex: "#D9531E", bg: "bg-flame", text: "text-white", role: "Light section eyebrows & brand mark accent" },
+    { name: "Moss", hex: "#5E8C2A", bg: "bg-moss", text: "text-white", role: "QA status & WhatsApp action" },
+    { name: "Amber", hex: "#E5901C", bg: "bg-amber", text: "text-ink", role: "Primary action buttons & key badges" },
+    { name: "Flame", hex: "#D9531E", bg: "bg-flame", text: "text-white", role: "Accent markers & brand mark core" },
   ];
 
   return (
@@ -36,7 +37,7 @@ export default function BrandShowcasePage() {
       />
 
       {/* Three Logo Concepts Comparison Section */}
-      <section className="py-16 sm:py-24 bg-paper border-b border-steel/15">
+      <section className="py-11 lg:py-16 bg-paper border-b border-rule">
         <Container>
           <div className="flex flex-col gap-12">
             <div className="flex flex-col gap-3">
@@ -51,7 +52,7 @@ export default function BrandShowcasePage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {/* Concept A (Approved) */}
-              <div className="bg-paper border-2 border-amber p-8 flex flex-col gap-6 relative shadow-md">
+              <div className="bg-card border-2 border-amber p-[28px] flex flex-col gap-6 relative">
                 <div className="absolute top-4 right-4 bg-amber text-ink font-mono text-[10px] font-bold px-2 py-0.5 uppercase tracking-widest">
                   APPROVED MARK
                 </div>
@@ -67,7 +68,7 @@ export default function BrandShowcasePage() {
                   >
                     <path
                       d="M16 2L4 9V23L16 30L28 23V9L16 2Z"
-                      stroke="#0F2C39"
+                      stroke="#10222A"
                       strokeWidth="2.5"
                     />
                     <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="#D9531E" />
@@ -89,8 +90,8 @@ export default function BrandShowcasePage() {
               </div>
 
               {/* Concept B */}
-              <div className="bg-paper border border-steel/20 p-8 flex flex-col gap-6 ">
-                <div className="w-20 h-20 bg-ink border border-steel/40 flex items-center justify-center p-3">
+              <div className="bg-card border border-rule p-[28px] flex flex-col gap-6">
+                <div className="w-20 h-20 bg-ink border border-rule flex items-center justify-center p-3">
                   <svg
                     width="40"
                     height="40"
@@ -99,7 +100,7 @@ export default function BrandShowcasePage() {
                     xmlns="http://www.w3.org/2000/svg"
                     className="w-full h-full"
                   >
-                    <rect x="4" y="4" width="24" height="24" stroke="#3D5B66" strokeWidth="2" />
+                    <rect x="4" y="4" width="24" height="24" stroke="#4A6470" strokeWidth="2" />
                     <path d="M10 8V24" stroke="#E5901C" strokeWidth="3" />
                     <path d="M22 8V24" stroke="#E5901C" strokeWidth="3" />
                     <path d="M10 16H22" stroke="#D9531E" strokeWidth="3" />
@@ -120,8 +121,8 @@ export default function BrandShowcasePage() {
               </div>
 
               {/* Concept C */}
-              <div className="bg-paper border border-steel/20 p-8 flex flex-col gap-6 ">
-                <div className="w-20 h-20 bg-ink border border-steel/40 flex items-center justify-center p-3">
+              <div className="bg-card border border-rule p-[28px] flex flex-col gap-6">
+                <div className="w-20 h-20 bg-ink border border-rule flex items-center justify-center p-3">
                   <svg
                     width="40"
                     height="40"
@@ -154,7 +155,7 @@ export default function BrandShowcasePage() {
       </section>
 
       {/* Color Palette Tokens Swatch Section */}
-      <section className="py-16 sm:py-24 bg-mist/30">
+      <section className="py-11 lg:py-16 bg-linen border-b border-rule">
         <Container>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-3">
@@ -171,19 +172,19 @@ export default function BrandShowcasePage() {
               {colors.map((c) => (
                 <div
                   key={c.name}
-                  className="bg-paper border border-steel/20 p-5 flex flex-col gap-4 shadow-sm"
+                  className="bg-card border border-rule p-5 flex flex-col gap-4"
                 >
-                  <div className={`${c.bg} ${c.text} h-24 p-3 flex flex-col justify-between border border-steel/10`}>
+                  <div className={`${c.bg} ${c.text} h-24 p-3 flex flex-col justify-between border border-rule`}>
                     <span className="font-display font-bold text-sm uppercase">
                       {c.name}
                     </span>
-                    <span className="font-mono text-xs tracking-wider ">
+                    <span className="font-mono text-xs tracking-wider">
                       {c.hex}
                     </span>
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono text-[11px] font-bold text-steel uppercase">
+                    <span className="font-mono text-[11px] font-bold text-ink uppercase">
                       Class: bg-{c.name.toLowerCase()} / text-{c.name.toLowerCase()}
                     </span>
                     <span className="font-body text-xs text-slate font-light">

@@ -31,20 +31,20 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left Column: Direct Contact Details (lib/site.ts) */}
             <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="bg-mist/50 border border-steel/20 p-6 flex flex-col gap-5">
+              <div className="bg-linen border border-rule p-6 flex flex-col gap-5">
                 <h2 className="font-display font-bold text-xl sm:text-2xl text-ink tracking-tight">
                   Office and contact details
                 </h2>
 
                 <div className="font-mono text-xs text-slate uppercase space-y-4 pt-2">
-                  <div className="flex flex-col gap-1 border-b border-steel/15 pb-3">
+                  <div className="flex flex-col gap-1 border-b border-rule pb-3">
                     <span className="text-amber font-bold">PHYSICAL ADDRESS:</span>
                     <span className="text-ink normal-case font-body text-base">
                       {siteConfig.address}
                     </span>
                   </div>
 
-                  <div className="flex flex-col gap-1 border-b border-steel/15 pb-3">
+                  <div className="flex flex-col gap-1 border-b border-rule pb-3">
                     <span className="text-amber font-bold">TELEPHONE:</span>
                     <a
                       href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
@@ -54,7 +54,7 @@ export default function ContactPage() {
                     </a>
                   </div>
 
-                  <div className="flex flex-col gap-1 border-b border-steel/15 pb-3">
+                  <div className="flex flex-col gap-1 border-b border-rule pb-3">
                     <span className="text-amber font-bold">COMMERCIAL EMAIL:</span>
                     <a
                       href={`mailto:${siteConfig.email}`}
@@ -64,7 +64,7 @@ export default function ContactPage() {
                     </a>
                   </div>
 
-                  <div className="flex flex-col gap-1 border-b border-steel/15 pb-3">
+                  <div className="flex flex-col gap-1 border-b border-rule pb-3">
                     <span className="text-amber font-bold">WHATSAPP DIRECT DESK:</span>
                     <a
                       href={siteConfig.whatsapp}
@@ -86,8 +86,8 @@ export default function ContactPage() {
               </div>
 
               {/* Direct Callout Box */}
-              <div className="bg-steel text-paper p-8 border border-steel/80 flex flex-col gap-4">
-                <Eyebrow onDark>SPOT PARCEL DISPATCH</Eyebrow>
+              <div className="bg-ink text-paper p-8 border border-ink flex flex-col gap-4">
+                <Eyebrow>SPOT PARCEL DISPATCH</Eyebrow>
                 <h3 className="font-display font-bold text-xl text-paper">
                   Spot order inquiries
                 </h3>

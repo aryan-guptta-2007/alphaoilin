@@ -38,7 +38,7 @@ export default function CareersPage() {
             </div>
 
             {/* Open Roles List */}
-            <div className="flex flex-col gap-8 pt-4 border-t border-steel/15">
+            <div className="flex flex-col gap-8 pt-4 border-t border-rule">
               <div className="flex items-center justify-between">
                 <h3 className="font-display font-extrabold text-2xl text-ink tracking-tight">
                   Current Open Positions ({openRoles.length})
@@ -54,7 +54,7 @@ export default function CareersPage() {
                   return (
                     <div
                       key={role.id}
-                      className="bg-mist/40 border border-steel/30 p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:border-amber transition-colors"
+                      className="bg-linen border border-rule p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:border-amber transition-colors"
                     >
                       <div className="flex flex-col gap-3 max-w-3xl">
                         <div className="flex items-center gap-3 flex-wrap">

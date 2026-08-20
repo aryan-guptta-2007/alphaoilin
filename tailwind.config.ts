@@ -9,13 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        ink: "#07171E",
-        steel: "#0F2C39",
-        slate: "#3D5B66",
-        mist: "#E9EDEA",
-        paper: "#F6F8F5",
+        background: "#FAF9F6",
+        foreground: "#10222A",
+        paper: "#FAF9F6",
+        linen: "#F1EEE7",
+        card: "#FFFFFF",
+        rule: "#DDD8CD",
+        ink: "#10222A",
+        slate: "#4A6470",
+        steel: "#10222A",
+        mist: "#F1EEE7",
         blue: "#14618E",
         moss: "#5E8C2A",
         amber: "#E5901C",

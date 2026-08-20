@@ -18,16 +18,11 @@ export const SpecTable: React.FC<SpecTableProps> = ({
   columns,
   data,
   caption,
-  onDark = false,
   className = "",
   ...props
 }) => {
-  const borderColor = onDark ? "border-mist/15" : "border-steel/15";
-  const textColor = onDark ? "text-paper" : "text-ink";
-  const hoverRowBg = onDark ? "hover:bg-steel/40" : "hover:bg-mist/30";
-
   return (
-    <div className={`w-full overflow-x-auto max-w-full border border-steel/20 ${className}`.trim()}>
+    <div className={`w-full overflow-x-auto max-w-full border border-rule ${className}`.trim()}>
       <table className="w-full min-w-[550px] text-left border-collapse" {...props}>
         {caption && (
           <caption className="text-left font-display text-xs uppercase font-bold tracking-wider text-slate mb-2">
@@ -35,7 +30,7 @@ export const SpecTable: React.FC<SpecTableProps> = ({
           </caption>
         )}
         <thead>
-          <tr className="bg-steel text-white font-display text-xs uppercase tracking-wider font-bold">
+          <tr className="bg-ink text-paper font-display text-xs uppercase tracking-wider font-bold">
             {columns.map((col) => (
               <th
                 key={col.key}
@@ -53,11 +48,11 @@ export const SpecTable: React.FC<SpecTableProps> = ({
             ))}
           </tr>
         </thead>
-        <tbody className={`divide-y ${borderColor} font-mono text-xs sm:text-sm ${textColor}`}>
+        <tbody className="divide-y divide-rule font-mono text-xs sm:text-sm text-ink bg-card">
           {data.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              className={`border-b ${borderColor} transition-colors ${hoverRowBg}`}
+              className="border-b border-rule transition-colors hover:bg-linen"
             >
               {columns.map((col) => (
                 <td

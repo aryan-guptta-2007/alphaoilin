@@ -9,12 +9,11 @@ export interface EyebrowProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Eyebrow: React.FC<EyebrowProps> = ({
   children,
-  onDark = false,
   className = "",
   as: Component = "span",
   ...props
 }) => {
-  const colorClass = onDark ? "text-amber" : "text-steel";
+  const colorClass = "text-amber";
   const baseClasses = "font-display text-xs uppercase tracking-[0.15em] font-bold block";
 
   return (

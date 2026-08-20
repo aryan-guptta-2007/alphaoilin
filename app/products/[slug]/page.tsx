@@ -69,9 +69,9 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* Left Sidebar: Product-Range Navigation */}
-            <aside className="lg:col-span-3 flex flex-col gap-6">
-              <div className="bg-mist/50 border border-steel/20 p-5 flex flex-col gap-4">
-                <h3 className="font-display font-bold text-base text-ink">
+            <aside className="lg:col-span-3 flex flex-col gap-6">              {/* Cut List Sub-Navigation */}
+              <div className="bg-linen border border-rule p-5 flex flex-col gap-3">
+                <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold border-b border-rule pb-2">
                   Cut list
                 </h3>
 
@@ -87,13 +87,13 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                         href={p.href}
                         className={`flex items-center justify-between p-2.5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
                           isCurrent
-                            ? "bg-steel text-paper font-bold border-l-4 border-amber"
-                            : "text-slate hover:bg-steel/10 hover:text-ink"
+                            ? "bg-ink text-paper font-bold border-l-4 border-amber"
+                            : "text-slate hover:bg-card hover:text-ink"
                         }`}
                       >
                         <span className="truncate pr-2">{p.name.split("(")[0]}</span>
                         <span
-                          className="w-2 h-2 shrink-0 border border-white/20"
+                          className="w-2 h-2 shrink-0 border border-black/10"
                           style={{ backgroundColor: p.swatchColor }}
                           aria-hidden="true"
                         />
@@ -104,8 +104,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               {/* Direct Trading Desk Help */}
-              <div className="bg-steel text-paper p-5 border border-steel/80 flex flex-col gap-3">
-                <p className="font-body text-xs text-mist leading-relaxed font-light max-w-[65ch]">
+              <div className="bg-linen border border-rule p-5 flex flex-col gap-3">
+                <p className="font-body text-xs text-slate leading-relaxed font-light max-w-[65ch]">
                   Need viscosity blending or tanker scheduling? Contact our Dubai trading desk directly.
                 </p>
                 <a
@@ -133,7 +133,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               <div className="flex flex-col gap-8">
                 {product.specTables.map((table, tIdx) => (
                   <div key={tIdx} className="flex flex-col gap-3">
-                    <h3 className="font-mono text-xs uppercase tracking-eyebrow text-steel font-bold">
+                    <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold">
                       {table.label}
                     </h3>
 
@@ -148,7 +148,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               {/* Industrial Applications */}
-              <div className="flex flex-col gap-4 pt-4 border-t border-steel/15">
+              <div className="flex flex-col gap-4 pt-4 border-t border-rule">
                 <h3 className="font-display font-extrabold text-2xl text-ink tracking-tight">
                   Applications and end uses
                 </h3>
@@ -167,7 +167,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <aside className="lg:col-span-3 flex flex-col gap-8">
               {/* Documents Box */}
               {/* TODO: Replace placeholder # links with real PDF URLs */}
-              <div className="bg-mist/40 border border-steel/20 p-5 flex flex-col gap-4">
+              <div className="bg-linen border border-rule p-5 flex flex-col gap-4">
                 <Eyebrow>DOCUMENTS</Eyebrow>
                 <h4 className="font-display font-bold text-base text-ink">
                   Documents and TDS
@@ -177,7 +177,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                     <li key={dIdx}>
                       <a
                         href={doc.url}
-                        className="group flex items-start gap-2.5 p-2 bg-paper border border-steel/10 hover:border-amber transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                        className="group flex items-start gap-2.5 p-2 bg-card border border-rule hover:border-amber transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
                       >
                         <svg
                           width="16"
@@ -210,14 +210,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               {/* Packing Options */}
-              <div className="bg-mist/40 border border-steel/20 p-5 flex flex-col gap-4">
+              <div className="bg-linen border border-rule p-5 flex flex-col gap-4">
                 <Eyebrow>PACKAGING</Eyebrow>
                 <h4 className="font-display font-bold text-base text-ink">
                   Packing and container options
                 </h4>
                 <ul className="flex flex-col gap-2.5 font-mono text-xs text-slate uppercase">
                   {product.packingOptions.map((pack, pIdx) => (
-                    <li key={pIdx} className="flex items-center gap-2 border-b border-steel/10 pb-2">
+                    <li key={pIdx} className="flex items-center gap-2 border-b border-rule pb-2">
                       <span className="w-1.5 h-1.5 bg-amber shrink-0" aria-hidden="true" />
                       <span>{pack}</span>
                     </li>
@@ -226,8 +226,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               {/* Quote Request Box */}
-              <div className="bg-ink text-paper p-6 border border-steel flex flex-col gap-4">
-                <Eyebrow onDark>COMMERCIAL INQUIRY</Eyebrow>
+              <div className="bg-ink text-paper p-6 border border-ink flex flex-col gap-4">
+                <Eyebrow>COMMERCIAL INQUIRY</Eyebrow>
                 <h4 className="font-display font-bold text-xl text-paper">
                   Request pricing for this product
                 </h4>
