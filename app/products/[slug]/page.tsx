@@ -86,7 +86,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                         href={p.href}
                         className={`flex items-center justify-between p-2.5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
                           isCurrent
-                            ? "bg-ink text-paper font-bold border-l-4 border-amber"
+                            ? "bg-card text-ink font-bold border-l-4 border-amber border-y border-r border-rule"
                             : "text-slate hover:bg-card hover:text-ink"
                         }`}
                       >
@@ -243,12 +243,12 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               {/* Quote Request Box */}
-              <div className="bg-ink text-paper p-6 border border-ink flex flex-col gap-4">
-                <Eyebrow>COMMERCIAL INQUIRY</Eyebrow>
-                <h4 className="font-display font-bold text-xl text-paper">
+              <div className="bg-linen text-ink p-5 border border-rule flex flex-col gap-4">
+                <Eyebrow className="text-flame">COMMERCIAL INQUIRY</Eyebrow>
+                <h4 className="font-display font-bold text-xl text-ink">
                   Request pricing for this product
                 </h4>
-                <p className="font-body text-xs text-mist leading-relaxed font-light">
+                <p className="font-body text-xs text-slate leading-relaxed font-light">
                   Submit target volume and discharge port for immediate spot pricing and COA confirmation.
                 </p>
                 <div className="flex flex-col gap-3 pt-2">

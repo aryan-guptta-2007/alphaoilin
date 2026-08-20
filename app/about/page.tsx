@@ -93,14 +93,14 @@ export default function AboutPage() {
       <section className="py-11 lg:py-16 bg-linen border-b border-rule">
         <Container>
           <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-5 bg-ink text-paper p-6 sm:p-8 border border-ink flex flex-col gap-4">
-              <h3 className="font-display font-extrabold text-xl sm:text-2xl text-paper">
+            <div className="lg:col-span-5 bg-card text-ink p-[28px] border border-rule flex flex-col gap-4">
+              <h3 className="font-display font-extrabold text-xl sm:text-2xl text-ink">
                 Why paperwork matters in oil trading
               </h3>
-              <p className="font-body text-mist text-sm leading-relaxed font-light max-w-[65ch]">
+              <p className="font-body text-slate text-sm leading-relaxed font-light max-w-[65ch]">
                 In lubricant blending and fuel combustion, off-spec viscosity or flash points cause equipment damage.
               </p>
-              <div className="font-mono text-xs text-amber uppercase tracking-eyebrow border-t border-mist/20 pt-4 flex flex-col gap-2 font-semibold">
+              <div className="font-mono text-xs text-amber uppercase tracking-eyebrow border-t border-rule pt-4 flex flex-col gap-2 font-semibold">
                 <span>✓ CERTIFICATE OF ANALYSIS ON EVERY PARCEL</span>
                 <span>✓ ASTM & EN TEST METHODS</span>
                 <span>✓ BATCH RETENTION SAMPLES</span>

@@ -86,12 +86,12 @@ export default function ContactPage() {
               </div>
 
               {/* Direct Callout Box */}
-              <div className="bg-ink text-paper p-8 border border-ink flex flex-col gap-4">
-                <Eyebrow>SPOT PARCEL DISPATCH</Eyebrow>
-                <h3 className="font-display font-bold text-xl text-paper">
+              <div className="bg-linen text-ink p-[28px] border border-rule flex flex-col gap-4">
+                <Eyebrow className="text-flame">SPOT PARCEL DISPATCH</Eyebrow>
+                <h3 className="font-display font-bold text-xl text-ink">
                   Spot order inquiries
                 </h3>
-                <p className="font-body text-xs text-mist leading-relaxed font-light">
+                <p className="font-body text-xs text-slate leading-relaxed font-light">
                   For urgent vessel laycan confirmations or spot flexitank orders, contact our desk via WhatsApp for real-time response.
                 </p>
                 <div className="pt-2">

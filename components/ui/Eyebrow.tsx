@@ -13,7 +13,7 @@ export const Eyebrow: React.FC<EyebrowProps> = ({
   as: Component = "span",
   ...props
 }) => {
-  const colorClass = "text-amber";
+  const colorClass = className.includes("text-") ? "" : "text-amber";
   const baseClasses = "font-display text-xs uppercase tracking-[0.15em] font-bold block";
 
   return (

@@ -26,7 +26,7 @@ export default function Home() {
     flashPoint: spec.flashPoint,
     pourPoint: spec.pourPoint,
     color: (
-      <span className="px-2 py-0.5 text-[11px] bg-steel text-paper font-semibold uppercase">
+      <span className="px-2 py-0.5 text-[11px] bg-linen text-ink font-semibold uppercase border border-rule">
         {spec.color}
       </span>
     ),
@@ -57,25 +57,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      {/* Hero Section with Duotone Tank Farm Photography Background */}
-      <section className="relative py-11 lg:py-16 bg-paper border-b border-steel/15 overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden bg-ink pointer-events-none">
-          <Image
-            src="/images/tank-farm.jpg"
-            alt="Oil storage tank farm at dusk"
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover grayscale filter contrast-125 opacity-[0.18] mix-blend-multiply"
-          />
-          <div className="absolute inset-0 bg-ink/80 mix-blend-multiply" />
-        </div>
-
-        <Container className="relative z-10">
+      {/* Hero Section: Flat Warm Off-White Page Background */}
+      <section className="py-11 lg:py-16 bg-paper border-b border-rule">
+        <Container>
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Hero Left Column (Sticky on Desktop) */}
             <div className="lg:col-span-6 flex flex-col gap-5 pt-2 lg:sticky lg:top-[96px] lg:self-start">
-              <Eyebrow>DUBAI TRADING DESK</Eyebrow>
+              <Eyebrow className="text-flame">DUBAI TRADING DESK</Eyebrow>
 
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[42px] tracking-tight lg:tracking-[-0.025em] text-ink leading-tight sm:leading-none break-words max-w-full">
                 Refined oil products and bulk fuel from&nbsp;Dubai

@@ -57,7 +57,7 @@ export default function BrandShowcasePage() {
                   APPROVED MARK
                 </div>
 
-                <div className="w-20 h-20 bg-ink border border-amber/40 flex items-center justify-center p-3">
+                <div className="w-20 h-20 bg-linen border border-amber/40 flex items-center justify-center p-3">
                   <svg
                     width="40"
                     height="40"
@@ -91,7 +91,7 @@ export default function BrandShowcasePage() {
 
               {/* Concept B */}
               <div className="bg-card border border-rule p-[28px] flex flex-col gap-6">
-                <div className="w-20 h-20 bg-ink border border-rule flex items-center justify-center p-3">
+                <div className="w-20 h-20 bg-linen border border-rule flex items-center justify-center p-3">
                   <svg
                     width="40"
                     height="40"
@@ -122,7 +122,7 @@ export default function BrandShowcasePage() {
 
               {/* Concept C */}
               <div className="bg-card border border-rule p-[28px] flex flex-col gap-6">
-                <div className="w-20 h-20 bg-ink border border-rule flex items-center justify-center p-3">
+                <div className="w-20 h-20 bg-linen border border-rule flex items-center justify-center p-3">
                   <svg
                     width="40"
                     height="40"
