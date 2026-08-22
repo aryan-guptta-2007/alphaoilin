@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#FAF9F6",
-        foreground: "#10222A",
-        paper: "#FAF9F6",
-        linen: "#F1EEE7",
+        background: "#FFFFFF",
+        foreground: "#0F1E26",
+        paper: "#FFFFFF",
+        linen: "#F5F6F7",
         card: "#FFFFFF",
-        rule: "#DDD8CD",
-        ink: "#10222A",
-        slate: "#4A6470",
-        steel: "#10222A",
-        mist: "#F1EEE7",
+        rule: "#E3E6E8",
+        ink: "#0F1E26",
+        slate: "#56676F",
+        steel: "#0F1E26",
+        mist: "#F5F6F7",
         blue: "#14618E",
         moss: "#5E8C2A",
         amber: "#E5901C",
@@ -41,5 +41,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-
-

@@ -29,12 +29,12 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-ink border-b border-steel/60 text-paper">
-      <Container className="flex items-center justify-between h-[68px]">
-        {/* Logo Lockup Left */}
-        <Link href="/" className="flex items-center gap-3 group shrink-0">
+    <header className="sticky top-0 z-50 bg-ink border-b border-steel/60 text-paper max-w-full">
+      <Container className="flex items-center justify-between h-[64px] sm:h-[68px] gap-2">
+        {/* Logo Lockup Left: Fits one row without wrapping or overflowing */}
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink min-w-0">
           {/* SVG Logo Mark */}
-          <div className="w-8 h-8 bg-steel border border-amber/40 flex items-center justify-center p-1 shrink-0 group-hover:border-amber transition-colors">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 bg-steel border border-amber/40 flex items-center justify-center p-1 shrink-0 group-hover:border-amber transition-colors">
             <svg
               width="40"
               height="40"
@@ -54,11 +54,11 @@ export const Header: React.FC = () => {
             </svg>
           </div>
 
-          <div className="flex flex-col">
-            <span className="font-display font-extrabold text-xl tracking-[.22em] text-paper leading-none uppercase">
+          <div className="flex flex-col min-w-0">
+            <span className="font-display font-extrabold text-base sm:text-xl tracking-[.16em] sm:tracking-[.22em] text-paper leading-none uppercase truncate">
               {siteConfig.name}
             </span>
-            <span className="font-mono text-[9px] text-slate uppercase tracking-wider leading-tight pt-0.5">
+            <span className="font-mono text-[8px] sm:text-[9px] text-slate uppercase tracking-wider leading-tight pt-0.5 truncate hidden xs:block sm:block">
               {siteConfig.legalName}
             </span>
           </div>
@@ -94,11 +94,11 @@ export const Header: React.FC = () => {
           </Link>
         </div>
 
-        {/* Hamburger Toggle (below lg) */}
+        {/* Hamburger Toggle (below lg): Fits in row without wrap */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-paper hover:text-amber focus:outline-none"
+          className="lg:hidden p-1.5 text-paper hover:text-amber focus:outline-none shrink-0"
           aria-label="Toggle navigation menu"
         >
           <svg

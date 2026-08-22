@@ -7,17 +7,35 @@
     border-radius: 0 !important;
   }
 
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
   body {
-    background-color: #FAF9F6;
-    color: #10222A;
+    background-color: #FFFFFF;
+    color: #0F1E26;
     font-family: var(--font-body), serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    position: relative;
   }
 }
 
 @layer utilities {
   .bg-dark-grid {
-    background-image: linear-gradient(to right, rgba(16, 34, 42, 0.04) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(16, 34, 42, 0.04) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(15, 30, 38, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(15, 30, 38, 0.04) 1px, transparent 1px);
     background-size: 32px 32px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

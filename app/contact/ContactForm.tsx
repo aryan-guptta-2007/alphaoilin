@@ -100,9 +100,9 @@ function ContactFormContent() {
   };
 
   return (
-    <div className="bg-card border border-rule p-[28px] flex flex-col gap-6">
+    <div className="bg-card border border-rule p-5 sm:p-[28px] flex flex-col gap-6 w-full max-w-full">
       <div className="border-b border-rule pb-4">
-        <h2 className="font-display font-extrabold text-2xl text-ink tracking-tight">
+        <h2 className="font-display font-extrabold text-xl sm:text-2xl text-ink tracking-tight">
           Request a quote
         </h2>
         <p className="font-body text-slate text-sm font-light leading-relaxed mt-1">
@@ -149,144 +149,142 @@ function ContactFormContent() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
-        {/* Full Name & Email */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="name"
-              className="font-display text-xs uppercase tracking-wider text-steel font-bold"
-            >
-              Full Name / Representative
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your name"
-              className={`bg-mist/40 border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
-                errors.name ? "border-flame" : "border-steel/30 focus:border-amber"
-              }`}
-            />
-            {errors.name && (
-              <span className="font-mono text-[11px] text-flame">{errors.name}</span>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="email"
-              className="font-display text-xs uppercase tracking-wider text-steel font-bold"
-            >
-              Corporate Email Address
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="name@company.com"
-              className={`bg-mist/40 border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
-                errors.email ? "border-flame" : "border-steel/30 focus:border-amber"
-              }`}
-            />
-            {errors.email && (
-              <span className="font-mono text-[11px] text-flame">{errors.email}</span>
-            )}
-          </div>
+      {/* All fields full width, single column */}
+      <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full max-w-full" noValidate>
+        {/* Full Name */}
+        <div className="flex flex-col gap-1.5 w-full">
+          <label
+            htmlFor="name"
+            className="font-display text-xs uppercase tracking-wider text-steel font-bold"
+          >
+            Full Name / Representative
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your name"
+            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+              errors.name ? "border-flame" : "border-rule focus:border-amber"
+            }`}
+          />
+          {errors.name && (
+            <span className="font-mono text-[11px] text-flame">{errors.name}</span>
+          )}
         </div>
 
-        {/* Phone & Product Select */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="phone"
-              className="font-display text-xs uppercase tracking-wider text-steel font-bold"
-            >
-              Telephone / WhatsApp
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="+971 50 123 4567"
-              className={`bg-mist/40 border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
-                errors.phone ? "border-flame" : "border-steel/30 focus:border-amber"
-              }`}
-            />
-            {errors.phone && (
-              <span className="font-mono text-[11px] text-flame">{errors.phone}</span>
-            )}
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="product"
-              className="font-display text-xs uppercase tracking-wider text-steel font-bold"
-            >
-              Product Category <span className="text-slate/60 font-normal lowercase">(optional)</span>
-            </label>
-            <input
-              type="text"
-              id="product"
-              name="product"
-              value={formData.product}
-              onChange={handleChange}
-              placeholder="Base Oil SN 500, Gasoil D2, etc."
-              className="bg-mist/40 border border-steel/30 p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber"
-            />
-          </div>
+        {/* Corporate Email */}
+        <div className="flex flex-col gap-1.5 w-full">
+          <label
+            htmlFor="email"
+            className="font-display text-xs uppercase tracking-wider text-steel font-bold"
+          >
+            Corporate Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="name@company.com"
+            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+              errors.email ? "border-flame" : "border-rule focus:border-amber"
+            }`}
+          />
+          {errors.email && (
+            <span className="font-mono text-[11px] text-flame">{errors.email}</span>
+          )}
         </div>
 
-        {/* Quantity & Discharge Port */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="quantity"
-              className="font-display text-xs uppercase tracking-wider text-steel font-bold"
-            >
-              Parcel Volume <span className="text-slate/60 font-normal lowercase">(optional)</span>
-            </label>
-            <input
-              type="text"
-              id="quantity"
-              name="quantity"
-              value={formData.quantity}
-              onChange={handleChange}
-              placeholder="5,000 MT / Flexitank 21.5 MT"
-              className="bg-mist/40 border border-steel/30 p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber"
-            />
-          </div>
+        {/* Phone */}
+        <div className="flex flex-col gap-1.5 w-full">
+          <label
+            htmlFor="phone"
+            className="font-display text-xs uppercase tracking-wider text-steel font-bold"
+          >
+            Telephone / WhatsApp
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="+971 50 123 4567"
+            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+              errors.phone ? "border-flame" : "border-rule focus:border-amber"
+            }`}
+          />
+          {errors.phone && (
+            <span className="font-mono text-[11px] text-flame">{errors.phone}</span>
+          )}
+        </div>
 
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="dischargePort"
-              className="font-display text-xs uppercase tracking-wider text-steel font-bold"
-            >
-              Discharge Port <span className="text-slate/60 font-normal lowercase">(optional)</span>
-            </label>
-            <input
-              type="text"
-              id="dischargePort"
-              name="dischargePort"
-              value={formData.dischargePort}
-              onChange={handleChange}
-              placeholder="Jebel Ali / Hamriyah / Singapore"
-              className="bg-mist/40 border border-steel/30 p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber"
-            />
-          </div>
+        {/* Product Select */}
+        <div className="flex flex-col gap-1.5 w-full">
+          <label
+            htmlFor="product"
+            className="font-display text-xs uppercase tracking-wider text-steel font-bold"
+          >
+            Product Category <span className="text-slate/60 font-normal lowercase">(optional)</span>
+          </label>
+          <input
+            type="text"
+            id="product"
+            name="product"
+            value={formData.product}
+            onChange={handleChange}
+            placeholder="Base Oil SN 500, Gasoil D2, etc."
+            className="bg-linen border border-rule p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
+          />
+        </div>
+
+        {/* Quantity */}
+        <div className="flex flex-col gap-1.5 w-full">
+          <label
+            htmlFor="quantity"
+            className="font-display text-xs uppercase tracking-wider text-steel font-bold"
+          >
+            Parcel Volume <span className="text-slate/60 font-normal lowercase">(optional)</span>
+          </label>
+          <input
+            type="text"
+            id="quantity"
+            name="quantity"
+            value={formData.quantity}
+            onChange={handleChange}
+            placeholder="5,000 MT / Flexitank 21.5 MT"
+            className="bg-linen border border-rule p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
+          />
+        </div>
+
+        {/* Discharge Port */}
+        <div className="flex flex-col gap-1.5 w-full">
+          <label
+            htmlFor="dischargePort"
+            className="font-display text-xs uppercase tracking-wider text-steel font-bold"
+          >
+            Discharge Port <span className="text-slate/60 font-normal lowercase">(optional)</span>
+          </label>
+          <input
+            type="text"
+            id="dischargePort"
+            name="dischargePort"
+            value={formData.dischargePort}
+            onChange={handleChange}
+            placeholder="Jebel Ali / Hamriyah / Singapore"
+            className="bg-linen border border-rule p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
+          />
         </div>
 
         {/* Message / Specifications */}
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1.5 w-full">
           <label
             htmlFor="message"
             className="font-display text-xs uppercase tracking-wider text-steel font-bold"
@@ -301,8 +299,8 @@ function ContactFormContent() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Please detail required viscosity parameters, delivery timeline, or commercial terms..."
-            className={`bg-mist/40 border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber ${
-              errors.message ? "border-flame" : "border-steel/30 focus:border-amber"
+            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+              errors.message ? "border-flame" : "border-rule focus:border-amber"
             }`}
           />
           {errors.message && (
@@ -311,7 +309,7 @@ function ContactFormContent() {
         </div>
 
         {/* Submit Button */}
-        <div className="pt-2">
+        <div className="pt-2 w-full">
           <Button
             type="submit"
             variant="amber"
@@ -330,7 +328,7 @@ export const ContactForm: React.FC = () => {
   return (
     <Suspense
       fallback={
-        <div className="p-8 bg-paper border border-steel/20 font-mono text-xs text-slate">
+        <div className="p-8 bg-paper border border-rule font-mono text-xs text-slate">
           LOADING INQUIRY FORM...
         </div>
       }

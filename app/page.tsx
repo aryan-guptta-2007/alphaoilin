@@ -63,7 +63,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             {/* Hero Left Column (Sticky on Desktop) */}
             <div className="lg:col-span-6 flex flex-col gap-5 pt-2 lg:sticky lg:top-[96px] lg:self-start">
-              <Eyebrow className="text-flame">DUBAI TRADING DESK</Eyebrow>
+              <Eyebrow className="text-slate">DUBAI TRADING DESK</Eyebrow>
 
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[42px] tracking-tight lg:tracking-[-0.025em] text-ink leading-tight sm:leading-none break-words max-w-full">
                 Refined oil products and bulk fuel from&nbsp;Dubai
@@ -183,8 +183,8 @@ export default function Home() {
       </section>
 
       {/* Base Oil Grades Table Section */}
-      <section className="py-11 lg:py-16 bg-paper">
-        <Container>
+      <section className="py-11 lg:py-16 bg-paper overflow-hidden">
+        <Container className="min-w-0 max-w-full overflow-hidden">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
               <div className="flex flex-col gap-2 max-w-[65ch]">

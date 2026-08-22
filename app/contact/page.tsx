@@ -87,7 +87,7 @@ export default function ContactPage() {
 
               {/* Direct Callout Box */}
               <div className="bg-linen text-ink p-[28px] border border-rule flex flex-col gap-4">
-                <Eyebrow className="text-flame">SPOT PARCEL DISPATCH</Eyebrow>
+                <Eyebrow className="text-slate">SPOT PARCEL DISPATCH</Eyebrow>
                 <h3 className="font-display font-bold text-xl text-ink">
                   Spot order inquiries
                 </h3>

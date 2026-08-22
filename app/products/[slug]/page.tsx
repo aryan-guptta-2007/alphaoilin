@@ -108,7 +108,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                     alt={product.imageAlt}
                     width="360"
                     height="360"
-                    className="w-full max-w-[360px] h-auto object-contain mx-auto"
+                    className="w-full max-w-[240px] min-[940px]:max-w-[360px] h-auto object-contain mx-auto"
                   />
                 </div>
 
