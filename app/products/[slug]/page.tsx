@@ -49,6 +49,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
   return (
     <>
+      {/* H1 Heading at top of page */}
       <PageHero
         title={product.name}
         description={product.tagline}
@@ -63,63 +64,64 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
       {/* Main Content Area */}
       <section className="py-11 lg:py-16 bg-paper">
         <Container>
-          <div className="flex flex-col min-[940px]:flex-row gap-8 lg:gap-12 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             {/* 1. Far Left Column: Sticky Product Directory Sidebar (240px wide on desktop, top: 96px) */}
-            <aside className="w-full min-[940px]:w-[240px] shrink-0 min-[940px]:sticky min-[940px]:top-[96px] min-[940px]:self-start z-10">
-              <div className="bg-linen border border-rule p-4 flex flex-col gap-3">
-                <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold border-b border-rule pb-2 hidden min-[940px]:block">
+            <aside className="w-full lg:w-[240px] shrink-0 lg:sticky lg:top-[96px] lg:self-start z-10">
+              <div className="bg-linen border border-rule p-3 sm:p-4 flex flex-col gap-3">
+                <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold border-b border-rule pb-2 hidden lg:block">
                   Product Directory
                 </h3>
 
-                {/* Vertical Sidebar on desktop (>=940px), Horizontal Scrolling Chip Row below 940px */}
-                <nav
-                  aria-label="Product directory navigation"
-                  className="flex min-[940px]:flex-col overflow-x-auto min-[940px]:overflow-x-visible gap-2 pb-2 min-[940px]:pb-0 no-scrollbar"
-                >
-                  {productNavItems.map((item) => {
-                    const isCurrent = item.slug === product.slug;
-                    return (
-                      <Link
-                        key={item.slug}
-                        href={item.href}
-                        className={`transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber whitespace-nowrap text-xs font-mono shrink-0 min-[940px]:shrink ${
-                          isCurrent
-                            ? "bg-card text-ink font-bold border-l-4 border-amber border-y border-r border-rule p-2.5"
-                            : "bg-paper min-[940px]:bg-transparent text-slate hover:text-ink hover:bg-card p-2.5 border border-rule min-[940px]:border-none"
-                        }`}
-                      >
-                        {item.name}
-                      </Link>
-                    );
-                  })}
-                </nav>
+                {/* Mobile & Desktop Nav Wrapper */}
+                <div className="relative w-full min-w-0">
+                  {/* Vertical Sidebar on desktop (>=lg), Horizontal Scrolling Chip Row with horizontal padding on mobile (<lg) */}
+                  <nav
+                    aria-label="Product directory navigation"
+                    className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible gap-2 pb-1.5 lg:pb-0 no-scrollbar px-1 lg:px-0"
+                  >
+                    {productNavItems.map((item) => {
+                      const isCurrent = item.slug === product.slug;
+                      return (
+                        <Link
+                          key={item.slug}
+                          href={item.href}
+                          className={`transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber whitespace-nowrap text-xs font-mono shrink-0 lg:shrink ${
+                            isCurrent
+                              ? "bg-card text-ink font-bold border-l-4 border-amber border-y border-r border-rule p-2.5"
+                              : "bg-paper lg:bg-transparent text-slate hover:text-ink hover:bg-card p-2.5 border border-rule lg:border-none"
+                          }`}
+                        >
+                          {item.name}
+                        </Link>
+                      );
+                    })}
+                  </nav>
+
+                  {/* Right Edge Gradient Fade Mask Overlay on Mobile */}
+                  <div className="pointer-events-none absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-linen to-transparent opacity-90 lg:hidden" />
+                </div>
               </div>
             </aside>
 
             {/* 2. Main Body Content Column */}
             <main className="flex-1 min-w-0 flex flex-col gap-12 lg:gap-16">
               {/* Top Two-Column Section: Image (Left 45%) & Content (Right 55%) */}
-              <div className="flex flex-col min-[940px]:flex-row gap-8 lg:gap-12 items-stretch">
-                {/* LEFT COLUMN (45%): SVG illustration centred, max-width 360px, paper background with no border, no card, no caption */}
-                <div className="w-full min-[940px]:w-[45%] shrink-0 flex items-center justify-center p-6 sm:p-10 lg:p-12">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+                {/* LEFT COLUMN (45%): SVG illustration centred, max-width 240px on mobile, 360px on desktop */}
+                <div className="w-full lg:w-[45%] shrink-0 flex items-center justify-center p-6 sm:p-10 lg:p-12">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={product.imageSrc}
                     alt={product.imageAlt}
                     width="360"
                     height="360"
-                    className="w-full max-w-[240px] min-[940px]:max-w-[360px] h-auto object-contain mx-auto"
+                    className="w-full max-w-[240px] lg:max-w-[360px] h-auto object-contain mx-auto"
                   />
                 </div>
 
-                {/* RIGHT COLUMN (55%): Stacked H1, Description, MSDS Cards, Contact Us Button */}
-                <div className="w-full min-[940px]:w-[55%] flex flex-col justify-center gap-6">
-                  {/* H1 product name, uppercase, large */}
-                  <h1 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-ink uppercase tracking-tight leading-tight">
-                    {product.name}
-                  </h1>
-
-                  {/* Description paragraphs */}
+                {/* RIGHT COLUMN (55%): Stacked Description, MSDS Cards, Contact Us Button */}
+                <div className="w-full lg:w-[55%] flex flex-col justify-center gap-6">
+                  {/* Description paragraphs (Duplicate H1 heading removed) */}
                   <div className="flex flex-col gap-3 font-body text-sm sm:text-base text-slate leading-relaxed font-light">
                     {product.introParagraphs.map((para, idx) => (
                       <p key={idx}>{para}</p>
