@@ -60,20 +60,20 @@ export default function Home() {
       {/* Hero Section: Flat Warm Off-White Page Background */}
       <section className="py-11 lg:py-16 bg-paper border-b border-rule">
         <Container>
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start w-full min-w-0 max-w-full">
             {/* Hero Left Column (Sticky on Desktop) */}
-            <div className="lg:col-span-6 flex flex-col gap-5 pt-2 lg:sticky lg:top-[96px] lg:self-start">
+            <div className="lg:col-span-6 w-full min-w-0 max-w-full flex flex-col gap-5 pt-2 lg:sticky lg:top-[96px] lg:self-start">
               <Eyebrow className="text-slate">DUBAI TRADING DESK</Eyebrow>
 
               <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[42px] tracking-tight lg:tracking-[-0.025em] text-ink leading-tight sm:leading-none break-words max-w-full">
                 Refined oil products and bulk fuel from&nbsp;Dubai
               </h1>
 
-              <p className="font-body text-slate text-sm sm:text-[17px] leading-[1.6] font-light max-w-[65ch]">
+              <p className="font-body text-slate text-sm sm:text-[17px] leading-[1.6] font-light max-w-[65ch] max-w-full">
                 Hamburg Refined Oil Products Trading LLC is a Dubai energy trading firm. We deliver virgin base oils, industrial lubricants, and gas oil from Gulf refineries to international ports.
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-2">
+              <div className="flex flex-wrap gap-4 pt-2 w-full max-w-full">
                 <Button
                   variant="amber"
                   href="/contact"
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
 
             {/* Hero Right Column: Signature Distillation Column Element */}
-            <div id="distillation" className="lg:col-span-6 w-full">
+            <div id="distillation" className="lg:col-span-6 w-full min-w-0 max-w-full">
               <DistillationColumn />
             </div>
           </div>

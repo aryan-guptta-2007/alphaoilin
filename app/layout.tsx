@@ -60,15 +60,13 @@ export default function RootLayout({
       lang="en"
       className={`${archivo.variable} ${newsreader.variable} ${ibmPlexMono.variable}`}
     >
-      <body className="antialiased bg-paper text-ink flex flex-col min-h-screen font-body w-full max-w-full overflow-x-hidden">
-        <div className="flex-1 flex flex-col w-full max-w-full overflow-x-hidden min-w-0 relative">
-          <TopStrip />
-          <Header />
-          <main className="flex-1 min-w-0">{children}</main>
-          <CtaBand />
-          <Footer />
-          <FloatingWhatsapp />
-        </div>
+      <body className="antialiased bg-paper text-ink flex flex-col min-h-screen font-body">
+        <TopStrip />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <CtaBand />
+        <Footer />
+        <FloatingWhatsapp />
       </body>
     </html>
   );

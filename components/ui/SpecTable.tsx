@@ -22,24 +22,24 @@ export const SpecTable: React.FC<SpecTableProps> = ({
   ...props
 }) => {
   return (
-    <div className={`w-full min-w-0 max-w-full overflow-hidden ${className}`.trim()}>
+    <div className={`w-full min-w-0 max-w-full ${className}`.trim()}>
       {caption && (
         <div className="text-left font-display text-xs uppercase font-bold tracking-wider text-slate mb-2">
           {caption}
         </div>
       )}
       <div
-        className="relative w-full min-w-0 max-w-full border border-rule group"
-        style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}
+        className="relative w-full min-w-0 max-w-full border border-rule group overflow-x-auto"
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
-        <table className="w-full min-w-[540px] text-left border-collapse" {...props}>
+        <table className="w-full text-left border-collapse" {...props}>
           <thead>
             <tr className="bg-ink text-white font-display text-xs uppercase tracking-wider font-bold whitespace-nowrap">
               {columns.map((col) => (
                 <th
                   key={col.key}
                   scope="col"
-                  className={`py-3.5 px-3.5 font-bold text-xs ${
+                  className={`py-3.5 px-3.5 font-bold text-xs whitespace-nowrap ${
                     col.align === "center"
                       ? "text-center"
                       : col.align === "right"
