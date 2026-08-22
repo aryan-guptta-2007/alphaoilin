@@ -43,26 +43,15 @@ export const Header: React.FC = () => {
       <Container className="flex items-center justify-between h-[60px] gap-2">
         {/* Logo Lockup Left: Logo mark + HAMBURG wordmark only below 640px */}
         <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink min-w-0 min-h-[44px]">
-          {/* SVG Logo Mark */}
-          <div className="w-8 h-8 bg-steel border border-amber/40 flex items-center justify-center p-1 shrink-0 group-hover:border-amber transition-colors">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-full text-amber"
-            >
-              <path
-                d="M16 2L4 9V23L16 30L28 23V9L16 2Z"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinejoin="miter"
-              />
-              <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="#D9531E" />
-              <path d="M16 12L19 14V18L16 20L13 18V14L16 12Z" fill="#E5901C" />
-            </svg>
-          </div>
+          {/* Client Droplet Logo Mark (36px height) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo/hamburg-mark-white.svg"
+            alt="Hamburg logo mark"
+            width="36"
+            height="36"
+            className="h-[36px] w-auto shrink-0"
+          />
 
           <div className="flex flex-col min-w-0">
             <span className="font-display font-extrabold text-lg sm:text-xl tracking-[.16em] sm:tracking-[.22em] text-paper leading-none uppercase truncate">

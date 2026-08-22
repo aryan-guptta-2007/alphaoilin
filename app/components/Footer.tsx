@@ -12,23 +12,15 @@ export const Footer: React.FC = () => {
           {/* Group 1: Address & Contact Block */}
           <div className="md:col-span-5 flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-ink border border-amber/40 flex items-center justify-center p-1">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-full text-amber"
-                >
-                  <path
-                    d="M16 2L4 9V23L16 30L28 23V9L16 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  />
-                  <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="#D9531E" />
-                </svg>
-              </div>
+              {/* Client Droplet Logo Mark (32px height) */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo/hamburg-mark-white.svg"
+                alt="Hamburg logo mark"
+                width="32"
+                height="32"
+                className="h-[32px] w-auto shrink-0"
+              />
               <div className="flex flex-col">
                 <span className="font-display font-extrabold text-xl tracking-[.24em] text-paper uppercase">
                   {siteConfig.name}

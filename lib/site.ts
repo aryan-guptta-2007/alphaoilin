@@ -24,6 +24,5 @@ export const siteConfig = {
     { name: "Mission & Principles", href: "/mission-vision" },
     { name: "Careers & Openings", href: "/careers" },
     { name: "Contact Desk", href: "/contact" },
-    { name: "Brand Identity & Concepts", href: "/brand" },
   ],
 };

@@ -19,24 +19,19 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#07171E",
-          padding: "20px",
+          backgroundColor: "#FFFFFF",
+          padding: "24px",
         }}
       >
         <svg
-          width="120"
-          height="120"
-          viewBox="0 0 32 32"
+          width="132"
+          height="132"
+          viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M16 2L4 9V23L16 30L28 23V9L16 2Z"
-            stroke="#0F2C39"
-            strokeWidth="2.5"
-          />
-          <path d="M16 8L22 12V20L16 24L10 20V12L16 8Z" fill="#D9531E" />
-          <path d="M16 12L19 14V18L16 20L13 18V14L16 12Z" fill="#E5901C" />
+          <path d="M24 6C24 6 38 20 38 28C38 35.7 31.7 42 24 42C16.3 42 10 35.7 10 28C10 20 24 6 24 6Z" fill="#D9531E"/>
+          <path d="M24 16C24 16 31 24 31 29C31 32.9 27.9 36 24 36C20.1 36 17 32.9 17 29C17 24 24 16 24 16Z" fill="#E5901C"/>
         </svg>
       </div>
     ),
