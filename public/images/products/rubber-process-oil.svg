@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Line illustration of a tyre">
+<defs>
+  <linearGradient id="fill" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FDF1DC"/><stop offset="1" stop-color="#FBE3BC"/>
+  </linearGradient>
+</defs>
+<g fill="url(#fill)" stroke="#E5901C" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="200" cy="204" r="128"/>
+<circle cx="200" cy="204" r="72" fill="#FEF7EC"/>
+<circle cx="200" cy="204" r="46" fill="none"/>
+<path d="M200 76v28M200 304v28M72 204h28M300 204h28"/>
+<path d="M110 114l20 20M270 274l20 20M290 114l-20 20M130 274l-20 20"/>
+</g>
+<g fill="none" stroke="#E5901C" stroke-width="1" opacity=".55">
+<circle cx="200" cy="204" r="100"/>
+<path d="M200 104l-32 40 32 60 32-60zM200 304l-32-40 32-60 32 60z"/>
+<path d="M100 204l40-32 60 32-60 32zM300 204l-40-32-60 32 60 32z"/>
+<circle cx="200" cy="204" r="20" fill="none"/>
+</g>
+</svg>

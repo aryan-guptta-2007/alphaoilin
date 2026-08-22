@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -101,19 +100,16 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <main className="flex-1 min-w-0 flex flex-col gap-12 lg:gap-16">
               {/* Top Two-Column Section: Image (Left 45%) & Content (Right 55%) */}
               <div className="flex flex-col min-[940px]:flex-row gap-8 lg:gap-12 items-stretch">
-                {/* LEFT COLUMN (45%): Product image vertically centered with generous whitespace around it on paper background */}
-                <div className="w-full min-[940px]:w-[45%] shrink-0 flex items-center justify-center p-6 sm:p-8 bg-paper border border-rule">
-                  <div className="relative w-full aspect-[4/3] max-w-[440px] overflow-hidden border border-rule bg-card shadow-sm">
-                    <Image
-                      src={product.imageSrc}
-                      alt={product.imageAlt}
-                      width={800}
-                      height={600}
-                      quality={85}
-                      priority
-                      className="object-cover w-full h-full grayscale-[0.1] contrast-[1.05]"
-                    />
-                  </div>
+                {/* LEFT COLUMN (45%): SVG illustration centred, max-width 360px, paper background with no border, no card, no caption */}
+                <div className="w-full min-[940px]:w-[45%] shrink-0 flex items-center justify-center p-6 sm:p-10 lg:p-12">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={product.imageSrc}
+                    alt={product.imageAlt}
+                    width="360"
+                    height="360"
+                    className="w-full max-w-[360px] h-auto object-contain mx-auto"
+                  />
                 </div>
 
                 {/* RIGHT COLUMN (55%): Stacked H1, Description, MSDS Cards, Contact Us Button */}

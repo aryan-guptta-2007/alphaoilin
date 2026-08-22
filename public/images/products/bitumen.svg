@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Line illustration of a bitumen drum pouring">
+<defs>
+  <linearGradient id="fill" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FDF1DC"/><stop offset="1" stop-color="#FBE3BC"/>
+  </linearGradient>
+</defs>
+<g fill="url(#fill)" stroke="#E5901C" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M96 300h208a0 0 0 0 1 0 0l-14 22H110z"/>
+<ellipse cx="186" cy="96" rx="70" ry="26" transform="rotate(-16 186 96)"/>
+<path d="M136 76l-30 132a70 26 0 0 0 135 38l30-132" transform="rotate(-16 186 96)"/>
+<path d="M258 128c14 40 6 92-16 140-10 22-14 22-24 32" fill="none" stroke-width="10"/>
+<ellipse cx="218" cy="304" rx="58" ry="14"/>
+</g>
+<g fill="none" stroke="#E5901C" stroke-width="1" opacity=".55">
+<path d="M120 120l60 30 60-34M126 176l58 30 60-32"/>
+<path d="M170 92v150M212 96v152"/>
+<path d="M170 300l24-18 26 18 24-16"/>
+</g>
+</svg>

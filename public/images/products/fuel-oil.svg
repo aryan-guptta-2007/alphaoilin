@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Line illustration of a fuel jerrycan">
+<defs>
+  <linearGradient id="fill" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FDF1DC"/><stop offset="1" stop-color="#FBE3BC"/>
+  </linearGradient>
+</defs>
+<g fill="url(#fill)" stroke="#E5901C" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M120 130h150a14 14 0 0 1 14 14v168a14 14 0 0 1-14 14H120a14 14 0 0 1-14-14V144a14 14 0 0 1 14-14z"/>
+<path d="M232 130V112a10 10 0 0 1 10-10h22a10 10 0 0 1 10 10v18"/>
+<ellipse cx="253" cy="104" rx="24" ry="9"/>
+<path d="M120 130l24-24h150l-24 24" />
+<path d="M294 144l-24-14v182l24-12z"/>
+<rect x="150" y="196" width="72" height="60" rx="6" fill="none"/>
+</g>
+<g fill="none" stroke="#E5901C" stroke-width="1" opacity=".55">
+<path d="M106 176l64 34 64-34M106 250l64 32 64-32"/>
+<path d="M138 132v190M202 132v190"/>
+<path d="M106 160l32 24 34-30 32 30 30-26"/>
+<path d="M270 150l24-6M270 210l24-6M270 270l24-6"/>
+</g>
+</svg>

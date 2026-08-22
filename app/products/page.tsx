@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { distillationProducts, productsData } from "@/lib/products";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -31,7 +30,6 @@ export default function ProductsIndexPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {distillationProducts.map((p, idx) => {
               const detail = productsData[p.slug];
-              const isFirst = idx === 0;
               return (
                 <Link
                   key={p.slug}
@@ -56,21 +54,19 @@ export default function ProductsIndexPage() {
                       </span>
                     </div>
 
-                    {/* 3:2 Product Card Thumbnail */}
-                    <div className="relative w-full aspect-[3/2] overflow-hidden border border-rule bg-paper my-1">
-                      <Image
+                    {/* SVG Thumbnail at 140px, centred above the product name */}
+                    <div className="w-full flex items-center justify-center py-4 my-2">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
                         src={p.imageSrc}
                         alt={p.imageAlt}
-                        width={600}
-                        height={400}
-                        quality={80}
-                        priority={isFirst}
-                        loading={isFirst ? "eager" : "lazy"}
-                        className="object-cover w-full h-full grayscale-[0.2] sepia-[0.05] contrast-[1.05] group-hover:scale-[1.02] transition-transform duration-300"
+                        width="140"
+                        height="140"
+                        className="w-[140px] h-[140px] object-contain mx-auto group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
 
-                    <h2 className="font-display font-extrabold text-xl sm:text-2xl text-ink group-hover:text-amber transition-colors">
+                    <h2 className="font-display font-extrabold text-xl sm:text-2xl text-ink group-hover:text-amber transition-colors text-center sm:text-left">
                       {detail ? detail.name : p.name}
                     </h2>
 

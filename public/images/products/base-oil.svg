@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Line illustration of a steel oil drum">
+<defs>
+  <linearGradient id="fill" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FDF1DC"/><stop offset="1" stop-color="#FBE3BC"/>
+  </linearGradient>
+</defs>
+<g fill="url(#fill)" stroke="#E5901C" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="200" cy="108" rx="86" ry="30"/>
+<path d="M114 108v184a86 30 0 0 0 172 0V108"/>
+<ellipse cx="200" cy="108" rx="60" ry="20" fill="none"/>
+<circle cx="176" cy="106" r="9" fill="none"/>
+<path d="M114 170a86 30 0 0 0 172 0" fill="none"/>
+<path d="M114 232a86 30 0 0 0 172 0" fill="none"/>
+</g>
+<g fill="none" stroke="#E5901C" stroke-width="1" opacity=".55">
+<path d="M114 130l86 46 86-46M114 200l86 44 86-44M114 262l86 42 86-42"/>
+<path d="M156 116v180M200 122v182M244 116v180"/>
+<path d="M114 146l43 26 43-40 43 40 43-26"/>
+</g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Line illustration of a steel oil drum">
+<defs>
+  <linearGradient id="fill" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#FDF1DC"/><stop offset="1" stop-color="#FBE3BC"/>
+  </linearGradient>
+</defs>
+<g fill="url(#fill)" stroke="#E5901C" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M130 116a18 18 0 0 1 18-18h104a18 18 0 0 1 18 18v190H130z"/>
+<path d="M112 306h176v24H112z"/>
+<rect x="152" y="130" width="96" height="62" rx="5" fill="#FEF7EC"/>
+<path d="M270 176h26a10 10 0 0 1 10 10v54" fill="none" stroke-width="10"/>
+<path d="M306 240q6 44-24 66" fill="none" stroke-width="10"/>
+<path d="M268 296h30l22-14 10 16-24 20h-38z"/>
+<rect x="156" y="214" width="40" height="14" rx="4" fill="none"/>
+<rect x="156" y="244" width="40" height="14" rx="4" fill="none"/></g><g fill="none" stroke="#E5901C" stroke-width="1" opacity=".55"><path d="M130 214l70 26 70-26M130 264l70 24 70-24"/>
+<path d="M166 98v208M234 98v208"/>
+<path d="M164 144l36 22 36-22M164 172l36 18 36-18"/>
+<path d="M112 318l44 12 44-14 44 14 44-12"/></g></svg>
