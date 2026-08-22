@@ -34,6 +34,34 @@ export interface ProductDocument {
   url: string; // Placeholder # link
 }
 
+export interface ProductGrade {
+  name: string;
+  slug?: string;
+  pdfUrl?: string;
+}
+
+export interface ProductGradeGroup {
+  groupName?: string;
+  grades: ProductGrade[];
+}
+
+export interface ProductNavItem {
+  name: string;
+  slug: string;
+  href: string;
+}
+
+export const productNavItems: ProductNavItem[] = [
+  { name: "Base oil", slug: "base-oil", href: "/products/base-oil" },
+  { name: "Bitumen", slug: "bitumen", href: "/products/bitumen" },
+  { name: "Fuel oil", slug: "fuel-oil", href: "/products/fuel-oil" },
+  { name: "Gas oil", slug: "gas-oil", href: "/products/gas-oil" },
+  { name: "Grease", slug: "grease", href: "/products/grease" },
+  { name: "Hydrocarbon oil", slug: "hydrocarbon-oil", href: "/products/hydrocarbon-oil" },
+  { name: "Naphtha", slug: "naphtha", href: "/products/naphtha" },
+  { name: "Rubber process oil", slug: "rubber-process-oil", href: "/products/rubber-process-oil" },
+];
+
 export interface ProductDetail {
   slug: string;
   name: string;
@@ -42,6 +70,8 @@ export interface ProductDetail {
   imageSrc: string;
   imageAlt: string;
   imageCaption: string;
+  msdsUrl?: string;
+  gradeGroups: ProductGradeGroup[];
   introParagraphs: string[];
   specTables: ProductSpecTable[];
   applications: string[];
@@ -244,6 +274,36 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/base-oil.jpg",
     imageAlt: "Amber virgin base oil sample tested in laboratory glass beaker",
     imageCaption: "ASTM D445 kinematic viscosity testing on Group I base oil sample.",
+    msdsUrl: "/docs/msds/base-oil.pdf",
+    gradeGroups: [
+      {
+        groupName: "Group 1",
+        grades: [
+          { name: "SN 50", pdfUrl: "/docs/coa/sn-50.pdf" },
+          { name: "SN 60", pdfUrl: "/docs/coa/sn-60.pdf" },
+          { name: "SN 70", pdfUrl: "/docs/coa/sn-70.pdf" },
+          { name: "SN 150", pdfUrl: "/docs/coa/sn-150.pdf" },
+          { name: "SN 500", pdfUrl: "/docs/coa/sn-500.pdf" },
+          { name: "SN 600", pdfUrl: "/docs/coa/sn-600.pdf" },
+          { name: "BS 150", pdfUrl: "/docs/coa/bs-150.pdf" },
+        ],
+      },
+      {
+        groupName: "Group 2",
+        grades: [
+          { name: "N 150", pdfUrl: "/docs/coa/n-150.pdf" },
+          { name: "N 500", pdfUrl: "/docs/coa/n-500.pdf" },
+        ],
+      },
+      {
+        groupName: "Group 3",
+        grades: [
+          { name: "4cSt", pdfUrl: "/docs/coa/4cst.pdf" },
+          { name: "6cSt", pdfUrl: "/docs/coa/6cst.pdf" },
+          { name: "8cSt", pdfUrl: "/docs/coa/8cst.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies Group I solvent neutral base oils processed from paraffinic crude oil cuts. Our base oils are refined through solvent extraction and dewaxing to deliver oxidation resistance, thermal stability, and low volatility.",
       "Available in standard viscosity grades—SN 150 (light distillate), SN 500 (medium-heavy distillate), and Bright Stock BS 150 (heavy residual stock)—our inventory caters to commercial blender operations, lubricant compounding plants, and chemical manufacturers.",
@@ -297,6 +357,17 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/bitumen.jpg",
     imageAlt: "Fresh black asphalt bitumen paving surface layer",
     imageCaption: "Penetration grade 60/70 asphalt binder application for road paving.",
+    msdsUrl: "/docs/msds/bitumen.pdf",
+    gradeGroups: [
+      {
+        grades: [
+          { name: "Bitumen 60/70", pdfUrl: "/docs/coa/bitumen-60-70.pdf" },
+          { name: "Bitumen 80/100", pdfUrl: "/docs/coa/bitumen-80-100.pdf" },
+          { name: "Bitumen 85/25", pdfUrl: "/docs/coa/bitumen-85-25.pdf" },
+          { name: "Bitumen 90/40", pdfUrl: "/docs/coa/bitumen-90-40.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies premium penetration grade petroleum bitumen manufactured from vacuum distillation residue. Our bitumen grades 60/70 and 80/100 adhere to international EN 12591 and ASTM D946 standards.",
       "Recognized for superior viscoelastic properties, temperature susceptibility, and weather resistance, our asphalt bitumen is utilized extensively in heavy highway paving, airport runway construction, roofing felt manufacturing, and industrial waterproofing applications.",
@@ -349,6 +420,15 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/fuel-oil.jpg",
     imageAlt: "Heavy fuel oil terminal pipeline manifold and loading arm",
     imageCaption: "High-flow pipeline manifold for CST 180 and CST 380 marine fuel loading.",
+    msdsUrl: "/docs/msds/fuel-oil.pdf",
+    gradeGroups: [
+      {
+        grades: [
+          { name: "Fuel Oil 180 cSt", pdfUrl: "/docs/coa/fuel-oil-180.pdf" },
+          { name: "Fuel Oil 380 cSt", pdfUrl: "/docs/coa/fuel-oil-380.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC trades heavy residual fuel oils including Fuel Oil 180 cSt and Fuel Oil 380 cSt conforming to ISO 8217 RMG/RMK specifications.",
       "Processed from atmospheric and vacuum distillation bottoms, our heavy fuel oils deliver high calorific density, controlled kinematic viscosity, and low ash content for commercial shipping fleets, utility power plants, and heavy manufacturing furnaces.",
@@ -402,6 +482,16 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/gas-oil.jpg",
     imageAlt: "Gulf refinery gas oil storage tanks and distribution pipework",
     imageCaption: "10PPM ULSD and gas oil D2 bulk storage at Gulf refining facility.",
+    msdsUrl: "/docs/msds/gas-oil.pdf",
+    gradeGroups: [
+      {
+        grades: [
+          { name: "Gas Oil D2", pdfUrl: "/docs/coa/gas-oil-d2.pdf" },
+          { name: "10PPM ULSD", pdfUrl: "/docs/coa/10ppm-ulsd.pdf" },
+          { name: "500PPM Gas Oil", pdfUrl: "/docs/coa/500ppm-gas-oil.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies Gas Oil D2 (L-0.2-62 / GO 0.2) and Ultra-Low Sulfur Diesel (ULSD 10PPM) meeting EN 590 and ASTM D975 specifications.",
       "Derived from middle distillate hydrotreating, our gas oil features high cetane index, superior cold filter plugging point (CFPP), and optimal lubricity to ensure peak combustion efficiency and low emissions in diesel engines.",
@@ -454,6 +544,16 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/grease.jpg",
     imageAlt: "High-temperature lithium complex grease applied to industrial bearings",
     imageCaption: "Extreme-pressure NLGI Grade 2 lithium grease formulation.",
+    msdsUrl: "/docs/msds/grease.pdf",
+    gradeGroups: [
+      {
+        grades: [
+          { name: "NLGI 1 Lithium EP", pdfUrl: "/docs/coa/nlgi-1.pdf" },
+          { name: "NLGI 2 Lithium EP", pdfUrl: "/docs/coa/nlgi-2.pdf" },
+          { name: "NLGI 3 Lithium EP", pdfUrl: "/docs/coa/nlgi-3.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC manufactures and distributes high-performance multi-purpose lithium complex greases formulated with high VI mineral base oils and extreme pressure (EP) additives.",
       "Available in NLGI 2 and NLGI 3 consistency grades, our industrial greases deliver exceptional mechanical shear stability, water washout resistance, and drop points exceeding 260°C for severe operating environments.",
@@ -506,6 +606,15 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/naphtha.jpg",
     imageAlt: "Petrochemical plant atmospheric distillation towers for virgin naphtha",
     imageCaption: "Primary fractional distillation columns producing light and heavy virgin naphtha.",
+    msdsUrl: "/docs/msds/naphtha.pdf",
+    gradeGroups: [
+      {
+        grades: [
+          { name: "Light Virgin Naphtha (LVN)", pdfUrl: "/docs/coa/lvn.pdf" },
+          { name: "Heavy Virgin Naphtha (HVN)", pdfUrl: "/docs/coa/hvn.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC trades premium virgin naphtha fractions derived from crude oil atmospheric distillation.",
       "Categorized into Light Virgin Naphtha (LVN) and Heavy Virgin Naphtha (HVN), our naphtha products provide optimal paraffin content for petrochemical steam crackers and high naphthenic values for catalytic reformers.",
@@ -557,6 +666,15 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/rubber-process-oil.jpg",
     imageAlt: "Industrial tyre vulcanization and rubber compound manufacturing",
     imageCaption: "Aromatic and paraffinic rubber process oil blending for tire manufacturing.",
+    msdsUrl: "/docs/msds/rubber-process-oil.pdf",
+    gradeGroups: [
+      {
+        grades: [
+          { name: "RPO Aromatic (TDAE)", pdfUrl: "/docs/coa/rpo-aromatic.pdf" },
+          { name: "RPO Heavy Paraffinic (140)", pdfUrl: "/docs/coa/rpo-paraffinic.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies specialized Rubber Process Oils (RPO) formulated to improve workability, elasticity, and compounding performance in natural and synthetic rubber formulations.",
       "Our RPO range includes High Aromatic (RPO 110 / TDAE) and Heavy Paraffinic (RPO 140) process oils, providing excellent solvency with polymers, low PCA content, and optimal flash point safety.",
@@ -609,6 +727,15 @@ export const productsData: Record<string, ProductDetail> = {
     imageSrc: "/images/products/hydrocarbon-oil.jpg",
     imageAlt: "Industrial chemical pipe rack and solvent drum storage",
     imageCaption: "White spirit and aliphatic hydrocarbon solvent drum storage.",
+    msdsUrl: "/docs/msds/hydrocarbon-oil.pdf",
+    gradeGroups: [
+      {
+        grades: [
+          { name: "White Spirit / D40", pdfUrl: "/docs/coa/white-spirit-d40.pdf" },
+          { name: "Solvent C9 / Aromatic", pdfUrl: "/docs/coa/solvent-c9.pdf" },
+        ],
+      },
+    ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC distributes refined industrial hydrocarbon solvents and special boiling point (SBP) distillates formulated for precision industrial applications.",
       "Characterized by narrow boiling ranges, controlled aromatic content, and zero residue on evaporation, our hydrocarbon oils serve paint formulators, adhesive manufacturers, and industrial degreasing operations.",
