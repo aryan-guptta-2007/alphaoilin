@@ -9,7 +9,6 @@ import {
 } from "@/lib/products";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Button } from "@/components/ui/Button";
 import { SpecTable } from "@/components/ui/SpecTable";
 import { PageHero } from "@/components/ui/PageHero";
 import type { Metadata } from "next";
@@ -62,11 +61,11 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         ]}
       />
 
-      {/* Main Content Area: Two-Column Layout (Sticky Left Sidebar, Structured Right Content Column) */}
+      {/* Main Content Area */}
       <section className="py-11 lg:py-16 bg-paper">
         <Container>
           <div className="flex flex-col min-[940px]:flex-row gap-8 lg:gap-12 items-start">
-            {/* 1. Left Column: Sticky Product Navigation Sidebar (240px wide on desktop, top: 96px) */}
+            {/* 1. Far Left Column: Sticky Product Directory Sidebar (240px wide on desktop, top: 96px) */}
             <aside className="w-full min-[940px]:w-[240px] shrink-0 min-[940px]:sticky min-[940px]:top-[96px] min-[940px]:self-start z-10">
               <div className="bg-linen border border-rule p-4 flex flex-col gap-3">
                 <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold border-b border-rule pb-2 hidden min-[940px]:block">
@@ -75,7 +74,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
                 {/* Vertical Sidebar on desktop (>=940px), Horizontal Scrolling Chip Row below 940px */}
                 <nav
-                  aria-label="Product range navigation"
+                  aria-label="Product directory navigation"
                   className="flex min-[940px]:flex-col overflow-x-auto min-[940px]:overflow-x-visible gap-2 pb-2 min-[940px]:pb-0 no-scrollbar"
                 >
                   {productNavItems.map((item) => {
@@ -98,76 +97,116 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
             </aside>
 
-            {/* 2. Right Column (Structured Top to Bottom) */}
-            <main className="flex-1 min-w-0 flex flex-col gap-8 lg:gap-10">
-              {/* (a) Product Photograph, 3:2, full width of content column */}
-              <div className="flex flex-col gap-2">
-                <div className="relative w-full aspect-[3/2] overflow-hidden border border-rule bg-linen">
-                  <Image
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
-                    width={900}
-                    height={600}
-                    quality={80}
-                    priority
-                    className="object-cover w-full h-full grayscale-[0.2] sepia-[0.05] contrast-[1.05]"
-                  />
+            {/* 2. Main Body Content Column */}
+            <main className="flex-1 min-w-0 flex flex-col gap-12 lg:gap-16">
+              {/* Top Two-Column Section: Image (Left 45%) & Content (Right 55%) */}
+              <div className="flex flex-col min-[940px]:flex-row gap-8 lg:gap-12 items-stretch">
+                {/* LEFT COLUMN (45%): Product image vertically centered with generous whitespace around it on paper background */}
+                <div className="w-full min-[940px]:w-[45%] shrink-0 flex items-center justify-center p-6 sm:p-8 bg-paper border border-rule">
+                  <div className="relative w-full aspect-[4/3] max-w-[440px] overflow-hidden border border-rule bg-card shadow-sm">
+                    <Image
+                      src={product.imageSrc}
+                      alt={product.imageAlt}
+                      width={800}
+                      height={600}
+                      quality={85}
+                      priority
+                      className="object-cover w-full h-full grayscale-[0.1] contrast-[1.05]"
+                    />
+                  </div>
                 </div>
-                {product.imageCaption && (
-                  <span className="font-mono text-xs text-slate">
-                    {product.imageCaption}
-                  </span>
-                )}
+
+                {/* RIGHT COLUMN (55%): Stacked H1, Description, MSDS Cards, Contact Us Button */}
+                <div className="w-full min-[940px]:w-[55%] flex flex-col justify-center gap-6">
+                  {/* H1 product name, uppercase, large */}
+                  <h1 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-ink uppercase tracking-tight leading-tight">
+                    {product.name}
+                  </h1>
+
+                  {/* Description paragraphs */}
+                  <div className="flex flex-col gap-3 font-body text-sm sm:text-base text-slate leading-relaxed font-light">
+                    {product.introParagraphs.map((para, idx) => (
+                      <p key={idx}>{para}</p>
+                    ))}
+                  </div>
+
+                  {/* MSDS Download Cards */}
+                  <div className="flex flex-col gap-3 pt-2">
+                    {product.msdsCards.map((card, idx) => (
+                      /* TODO: Point to real MSDS PDF when provided by client */
+                      <a
+                        key={idx}
+                        href={card.url}
+                        download
+                        className="bg-card hover:bg-linen border border-rule transition-colors p-3.5 sm:p-4 flex items-center gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                      >
+                        {/* Download icon in a tinted square on the left */}
+                        <div className="w-10 h-10 shrink-0 bg-amber/10 text-amber flex items-center justify-center border border-amber/20 group-hover:bg-amber group-hover:text-white transition-colors">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                          </svg>
+                        </div>
+
+                        {/* PDF icon */}
+                        <div className="text-flame shrink-0">
+                          <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.75"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="10" y1="13" x2="14" y2="13" />
+                            <line x1="10" y1="17" x2="14" y2="17" />
+                          </svg>
+                        </div>
+
+                        {/* Two lines of text */}
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-slate font-medium">
+                            MATERIAL SAFETY DATA SHEET
+                          </span>
+                          <span className="font-display font-bold text-sm sm:text-base text-ink group-hover:text-amber transition-colors truncate">
+                            {card.title}
+                          </span>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* "CONTACT US" button in amber outline with amber text, not filled */}
+                  <div className="pt-2">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider font-bold px-6 py-3.5 border-2 border-amber text-amber hover:bg-amber hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+                    >
+                      CONTACT US
+                    </Link>
+                  </div>
+                </div>
               </div>
 
-              {/* (b) H1 Product Name */}
-              <h1 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-ink tracking-tight">
-                {product.name}
-              </h1>
-
-              {/* (c) Two or Three Paragraphs of Description */}
-              <div className="flex flex-col gap-4 font-body text-base sm:text-lg text-slate leading-relaxed font-light max-w-[65ch]">
-                {product.introParagraphs.map((para, idx) => (
-                  <p key={idx}>{para}</p>
-                ))}
-              </div>
-
-              {/* (d) Button Row: "Download MSDS" (ink outline) and "Request a quote" (amber, links to /contact) */}
-              <div className="flex flex-wrap items-center gap-4 border-b border-rule pb-8">
-                {/* TODO: Point to real MSDS PDF when provided by client */}
-                <Button
-                  variant="ink"
-                  href={product.msdsUrl || `/docs/msds/${product.slug}.pdf`}
-                  download
-                  className="inline-flex items-center gap-2"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="shrink-0"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  <span>Download MSDS</span>
-                </Button>
-                <Button variant="amber" href="/contact">
-                  Request a quote
-                </Button>
-              </div>
-
-              {/* 3. Grade Chips, grouped by base oil group */}
-              <div className="flex flex-col gap-6">
+              {/* Full Width Section below both columns: Grade Chips */}
+              <div className="flex flex-col gap-6 border-t border-rule pt-10">
                 <div className="flex flex-col gap-1">
                   <Eyebrow>CERTIFICATE OF ANALYSIS (COA)</Eyebrow>
-                  <h2 className="font-display font-bold text-xl text-ink tracking-tight">
+                  <h2 className="font-display font-bold text-xl sm:text-2xl text-ink tracking-tight">
                     Product Grades & COA Downloads
                   </h2>
                 </div>
@@ -224,8 +263,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 </div>
               </div>
 
-              {/* 4. Specification Tables */}
-              <div className="flex flex-col gap-8 border-t border-rule pt-8">
+              {/* Full Width Section below grade chips: Specification Table */}
+              <div className="flex flex-col gap-8 border-t border-rule pt-10">
                 {product.specTables.map((table, tIdx) => (
                   <div key={tIdx} className="flex flex-col gap-3">
                     <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold">
@@ -239,8 +278,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 ))}
               </div>
 
-              {/* 5. Applications & Packing Options */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-rule pt-8">
+              {/* Full Width Section: Applications & Packing Options */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-rule pt-10">
                 {/* Applications */}
                 <div className="bg-linen border border-rule p-[28px] flex flex-col gap-4">
                   <Eyebrow>APPLICATIONS</Eyebrow>

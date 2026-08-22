@@ -62,6 +62,12 @@ export const productNavItems: ProductNavItem[] = [
   { name: "Rubber process oil", slug: "rubber-process-oil", href: "/products/rubber-process-oil" },
 ];
 
+export interface MsdsCard {
+  title: string;
+  subtitle?: string;
+  url: string;
+}
+
 export interface ProductDetail {
   slug: string;
   name: string;
@@ -71,6 +77,7 @@ export interface ProductDetail {
   imageAlt: string;
   imageCaption: string;
   msdsUrl?: string;
+  msdsCards: MsdsCard[];
   gradeGroups: ProductGradeGroup[];
   introParagraphs: string[];
   specTables: ProductSpecTable[];
@@ -275,6 +282,12 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "Amber virgin base oil sample tested in laboratory glass beaker",
     imageCaption: "ASTM D445 kinematic viscosity testing on Group I base oil sample.",
     msdsUrl: "/docs/msds/base-oil.pdf",
+    msdsCards: [
+      {
+        title: "Solvent Neutral Base Oil (Group I)",
+        url: "/docs/msds/base-oil.pdf",
+      },
+    ],
     gradeGroups: [
       {
         groupName: "Group 1",
@@ -358,6 +371,12 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "Fresh black asphalt bitumen paving surface layer",
     imageCaption: "Penetration grade 60/70 asphalt binder application for road paving.",
     msdsUrl: "/docs/msds/bitumen.pdf",
+    msdsCards: [
+      {
+        title: "Bitumen Penetration & Oxidized Grades",
+        url: "/docs/msds/bitumen.pdf",
+      },
+    ],
     gradeGroups: [
       {
         grades: [
@@ -421,6 +440,16 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "Heavy fuel oil terminal pipeline manifold and loading arm",
     imageCaption: "High-flow pipeline manifold for CST 180 and CST 380 marine fuel loading.",
     msdsUrl: "/docs/msds/fuel-oil.pdf",
+    msdsCards: [
+      {
+        title: "Fuel Oil 180 cSt & 380 cSt (Standard Marine Grade)",
+        url: "/docs/msds/fuel-oil-standard.pdf",
+      },
+      {
+        title: "Non-Hazardous Low-Viscosity Fuel Oil Blend",
+        url: "/docs/msds/fuel-oil-non-hazardous.pdf",
+      },
+    ],
     gradeGroups: [
       {
         grades: [
@@ -483,6 +512,12 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "Gulf refinery gas oil storage tanks and distribution pipework",
     imageCaption: "10PPM ULSD and gas oil D2 bulk storage at Gulf refining facility.",
     msdsUrl: "/docs/msds/gas-oil.pdf",
+    msdsCards: [
+      {
+        title: "Gas Oil D2 & Ultra-Low Sulfur Diesel (10PPM)",
+        url: "/docs/msds/gas-oil.pdf",
+      },
+    ],
     gradeGroups: [
       {
         grades: [
@@ -545,6 +580,12 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "High-temperature lithium complex grease applied to industrial bearings",
     imageCaption: "Extreme-pressure NLGI Grade 2 lithium grease formulation.",
     msdsUrl: "/docs/msds/grease.pdf",
+    msdsCards: [
+      {
+        title: "Lithium EP Industrial Grease",
+        url: "/docs/msds/grease.pdf",
+      },
+    ],
     gradeGroups: [
       {
         grades: [
@@ -607,6 +648,12 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "Petrochemical plant atmospheric distillation towers for virgin naphtha",
     imageCaption: "Primary fractional distillation columns producing light and heavy virgin naphtha.",
     msdsUrl: "/docs/msds/naphtha.pdf",
+    msdsCards: [
+      {
+        title: "Light & Heavy Virgin Naphtha",
+        url: "/docs/msds/naphtha.pdf",
+      },
+    ],
     gradeGroups: [
       {
         grades: [
@@ -667,6 +714,12 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "Industrial tyre vulcanization and rubber compound manufacturing",
     imageCaption: "Aromatic and paraffinic rubber process oil blending for tire manufacturing.",
     msdsUrl: "/docs/msds/rubber-process-oil.pdf",
+    msdsCards: [
+      {
+        title: "Rubber Process Oil (TDAE / Paraffinic)",
+        url: "/docs/msds/rubber-process-oil.pdf",
+      },
+    ],
     gradeGroups: [
       {
         grades: [
@@ -728,6 +781,12 @@ export const productsData: Record<string, ProductDetail> = {
     imageAlt: "Industrial chemical pipe rack and solvent drum storage",
     imageCaption: "White spirit and aliphatic hydrocarbon solvent drum storage.",
     msdsUrl: "/docs/msds/hydrocarbon-oil.pdf",
+    msdsCards: [
+      {
+        title: "Industrial Hydrocarbon Solvents & White Spirit",
+        url: "/docs/msds/hydrocarbon-oil.pdf",
+      },
+    ],
     gradeGroups: [
       {
         grades: [
