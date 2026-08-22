@@ -3,88 +3,54 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { SpecTable, SpecTableColumn } from "@/components/ui/SpecTable";
-import { DistillationColumn } from "@/app/components/DistillationColumn";
-import { tradeFacts, howWeWorkSteps, baseOilSpecs } from "@/lib/products";
+import { SpecTable } from "@/components/ui/SpecTable";
+import { DistillationColumn } from "./components/DistillationColumn";
+import {
+  tradeFacts,
+  howWeWorkSteps,
+  productsData,
+  COA_FOOTNOTE,
+} from "@/lib/products";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dubai Trading Desk | Refined Oil Products & Virgin Base Oils",
+  description:
+    "Hamburg Refined Oil Products Trading LLC in Dubai trades Group I virgin base oils (SN 150, SN 500, BS 150), industrial lubricants, and distillate fuels.",
+};
 
 export default function Home() {
-  const baseOilColumns: SpecTableColumn[] = [
-    { key: "grade", header: "Grade / Solvent Neutral" },
-    { key: "viscosity40", header: "Viscosity @ 40°C (cSt)" },
-    { key: "viscosity100", header: "Viscosity @ 100°C (cSt)" },
-    { key: "viscosityIndex", header: "Viscosity Index" },
-    { key: "flashPoint", header: "Flash Point (COC)" },
-    { key: "pourPoint", header: "Pour Point" },
-    { key: "color", header: "ASTM Color", align: "center" },
-  ];
-
-  const baseOilTableData = baseOilSpecs.map((spec) => ({
-    grade: <span className="font-bold text-amber">{spec.grade}</span>,
-    viscosity40: spec.viscosity40,
-    viscosity100: spec.viscosity100,
-    viscosityIndex: spec.viscosityIndex,
-    flashPoint: spec.flashPoint,
-    pourPoint: spec.pourPoint,
-    color: (
-      <span className="px-2 py-0.5 text-[11px] bg-linen text-ink font-semibold uppercase border border-rule">
-        {spec.color}
-      </span>
-    ),
-  }));
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Hamburg for Refined Oil Products Trading LLC",
-    legalName: "Refined Oil Products Trading LLC",
-    url: "https://hamburg-int.com",
-    logo: "https://hamburg-int.com/logo.svg",
-    telephone: "+971 55 515 6779",
-    email: "info@hamburg-int.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Tejasvi Business Center, Office G12, Garhoud Deira",
-      addressLocality: "Dubai",
-      addressRegion: "Dubai",
-      addressCountry: "AE",
-    },
-    openingHours: "Su-Th 09:00-18:00",
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
       {/* Hero Section: Flat Warm Off-White Page Background */}
-      <section className="py-11 lg:py-16 bg-paper border-b border-rule">
+      <section className="py-8 sm:py-11 lg:py-16 bg-paper border-b border-rule">
         <Container>
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start w-full min-w-0 max-w-full">
-            {/* Hero Left Column (Sticky on Desktop) */}
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start w-full min-w-0 max-w-full">
+            {/* Hero Left Column */}
             <div className="lg:col-span-6 w-full min-w-0 max-w-full flex flex-col gap-5 pt-2 lg:sticky lg:top-[96px] lg:self-start">
               <Eyebrow className="text-slate">DUBAI TRADING DESK</Eyebrow>
 
-              <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-[42px] tracking-tight lg:tracking-[-0.025em] text-ink leading-tight sm:leading-none break-words max-w-full">
+              <h1 className="font-display font-extrabold text-[30px] sm:text-4xl lg:text-[42px] tracking-tight lg:tracking-[-0.025em] text-ink leading-tight break-words max-w-full">
                 Refined oil products and bulk fuel from&nbsp;Dubai
               </h1>
 
-              <p className="font-body text-slate text-sm sm:text-[17px] leading-[1.6] font-light max-w-[65ch] max-w-full">
+              <p className="font-body text-slate text-base sm:text-[17px] leading-relaxed font-light max-w-[65ch] max-w-full">
                 Hamburg Refined Oil Products Trading LLC is a Dubai energy trading firm. We deliver virgin base oils, industrial lubricants, and gas oil from Gulf refineries to international ports.
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-2 w-full max-w-full">
+              {/* Both CTAs full width on mobile, stacked with 12px gap, 44px min tap height */}
+              <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full max-w-full">
                 <Button
                   variant="amber"
                   href="/contact"
-                  className="focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2"
+                  className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center text-center focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2"
                 >
                   Request Commercial Quote
                 </Button>
                 <Button
                   variant="ink"
                   href="#distillation"
-                  className="focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2"
+                  className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center text-center focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2"
                 >
                   View Cut List
                 </Button>
@@ -97,12 +63,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Four Labelled Trade Facts (28px padding, equal height, high WCAG AA contrast) */}
-          <div className="mt-16 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {/* Four Labelled Trade Facts (24px padding on mobile, single column) */}
+          <div className="mt-12 sm:mt-16 pt-8 border-t border-rule grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full min-w-0 max-w-full">
             {tradeFacts.map((tf, idx) => (
               <div
                 key={idx}
-                className="bg-linen border-l-4 border-l-amber border border-rule p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
+                className="bg-linen border-l-4 border-l-amber border border-rule p-6 sm:p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors w-full min-w-0 max-w-full"
               >
                 <div className="flex flex-col gap-2">
                   <span className="font-mono text-xs font-bold uppercase tracking-eyebrow text-amber">
@@ -112,7 +78,7 @@ export default function Home() {
                     {tf.fact}
                   </h3>
                 </div>
-                <p className="font-body text-slate text-sm leading-[1.6] font-light mt-3">
+                <p className="font-body text-slate text-base leading-relaxed font-light mt-3">
                   {tf.description}
                 </p>
               </div>
@@ -121,24 +87,24 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* "How We Work" Section */}
-      <section className="py-11 lg:py-16 bg-linen border-b border-rule">
+      {/* "How We Work" Section (Single Column Process Cards on Mobile) */}
+      <section className="py-8 sm:py-11 lg:py-16 bg-linen border-b border-rule">
         <Container>
-          <div className="flex flex-col gap-10">
-            <div className="flex flex-col gap-2 max-w-[65ch]">
+          <div className="flex flex-col gap-8 sm:gap-10 w-full min-w-0 max-w-full">
+            <div className="flex flex-col gap-2 max-w-[65ch] max-w-full">
               <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
                 How an order moves
               </h2>
-              <p className="font-body text-slate text-base sm:text-[17px] leading-[1.6] font-light max-w-[65ch]">
+              <p className="font-body text-slate text-base sm:text-[17px] leading-relaxed font-light max-w-[65ch] max-w-full">
                 From refinery procurement to laboratory testing and vessel chartering, we handle each stage of physical delivery.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch w-full min-w-0 max-w-full">
               {howWeWorkSteps.map((step) => (
                 <div
                   key={step.stepNumber}
-                  className="bg-card border border-rule p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors"
+                  className="bg-card border border-rule p-6 sm:p-[28px] flex flex-col justify-between h-full hover:border-amber transition-colors w-full min-w-0 max-w-full"
                 >
                   <div className="flex flex-col gap-3">
                     <div className="border-b border-rule pb-3">
@@ -151,7 +117,7 @@ export default function Home() {
                       {step.title}
                     </h3>
 
-                    <p className="font-body text-slate text-sm sm:text-base font-light leading-[1.6] max-w-[65ch]">
+                    <p className="font-body text-slate text-base font-light leading-relaxed max-w-[65ch] max-w-full">
                       {step.description}
                     </p>
                   </div>
@@ -162,10 +128,9 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* 380px Full-Bleed Duotone Image Band Section */}
+      {/* 220px Full-Bleed Duotone Image Band Section on Mobile */}
       <section
-        className="relative w-full h-[380px] bg-paper overflow-hidden border-t border-b border-rule flex items-center justify-center"
-        style={{ height: "380px", position: "relative" }}
+        className="relative w-full h-[220px] sm:h-[320px] lg:h-[380px] bg-paper overflow-hidden border-t border-b border-rule flex items-center justify-center"
       >
         <Image
           src="/images/product-tanker.jpg"
@@ -176,35 +141,44 @@ export default function Home() {
           className="object-cover grayscale filter contrast-125 opacity-[0.06]"
         />
         <Container className="relative z-10 text-center max-w-3xl px-4">
-          <p className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-ink tracking-tight">
+          <p className="font-display font-bold text-lg sm:text-2xl lg:text-3xl text-ink tracking-tight">
             Vessel chartering and bulk discharge port logistics across global trade routes.
           </p>
         </Container>
       </section>
 
-      {/* Base Oil Grades Table Section */}
-      <section className="py-11 lg:py-16 bg-paper overflow-hidden">
-        <Container className="min-w-0 max-w-full overflow-hidden">
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-              <div className="flex flex-col gap-2 max-w-[65ch]">
-                <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
-                  Group I base oil specifications
-                </h2>
-                <p className="font-body text-slate text-base font-light leading-relaxed">
-                  Technical specification parameters for SN 150, SN 500, and Bright Stock BS 150 base oils.
-                </p>
-              </div>
-              <Button variant="ink" href="/docs/product-list.pdf" target="_blank" rel="noopener noreferrer" className="shrink-0 text-xs py-2.5 px-4">
-                Download PDF Catalog ↓
-              </Button>
+      {/* Virgin Base Oil Specs Table Section */}
+      <section className="py-8 sm:py-11 lg:py-16 bg-paper border-b border-rule">
+        <Container>
+          <div className="flex flex-col gap-6 w-full min-w-0 max-w-full">
+            <div className="flex flex-col gap-2">
+              <Eyebrow className="text-slate">VIRGIN BASE OILS</Eyebrow>
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-ink tracking-tight">
+                Group I Solvent Neutral Specifications
+              </h2>
+              <p className="font-body text-slate text-base font-light max-w-[65ch] max-w-full">
+                Technical properties for SN 150, SN 500, and Bright Stock BS 150 sourced directly from Gulf refining complexes.
+              </p>
             </div>
 
-            <SpecTable
-              columns={baseOilColumns}
-              data={baseOilTableData}
-              caption="TABLE 1.0 — VIRGIN GROUP I BASE OIL TYPICAL VALUES (ASTM METHOD TESTED)"
-            />
+            <div className="flex flex-col gap-2 w-full min-w-0 max-w-full">
+              <span className="font-mono text-xs text-slate uppercase tracking-wider block sm:hidden">
+                Scroll to see all columns →
+              </span>
+              <SpecTable
+                columns={productsData["base-oil"].specTables[0].columns}
+                data={productsData["base-oil"].specTables[0].rows}
+              />
+              <p className="font-mono text-xs text-slate italic pt-1">
+                * {COA_FOOTNOTE}
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <Button variant="amber" href="/products/base-oil">
+                View Full Base Oil Data Sheet & Downloads
+              </Button>
+            </div>
           </div>
         </Container>
       </section>

@@ -105,7 +105,7 @@ function ContactFormContent() {
         <h2 className="font-display font-extrabold text-xl sm:text-2xl text-ink tracking-tight">
           Request a quote
         </h2>
-        <p className="font-body text-slate text-sm font-light leading-relaxed mt-1">
+        <p className="font-body text-base font-light leading-relaxed mt-1 text-slate">
           Submit your requirements directly to our Dubai trading desk for spot parcel availability and COA analysis.
         </p>
       </div>
@@ -133,7 +133,7 @@ function ContactFormContent() {
           </svg>
           <div className="flex flex-col gap-1">
             <span className="font-bold text-moss">INQUIRY RECEIVED</span>
-            <span className="text-slate normal-case font-body text-sm leading-relaxed">
+            <span className="text-slate normal-case font-body text-base leading-relaxed">
               {successMessage}
             </span>
           </div>
@@ -149,7 +149,7 @@ function ContactFormContent() {
         </div>
       )}
 
-      {/* All fields full width, single column */}
+      {/* All fields full width, single column, 48px min height, 16px font to prevent iOS zoom */}
       <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full max-w-full" noValidate>
         {/* Full Name */}
         <div className="flex flex-col gap-1.5 w-full">
@@ -167,12 +167,12 @@ function ContactFormContent() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your name"
-            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+            className={`bg-linen border px-4 py-3 font-body text-base text-ink rounded-none min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
               errors.name ? "border-flame" : "border-rule focus:border-amber"
             }`}
           />
           {errors.name && (
-            <span className="font-mono text-[11px] text-flame">{errors.name}</span>
+            <span className="font-mono text-xs text-flame">{errors.name}</span>
           )}
         </div>
 
@@ -192,12 +192,12 @@ function ContactFormContent() {
             value={formData.email}
             onChange={handleChange}
             placeholder="name@company.com"
-            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+            className={`bg-linen border px-4 py-3 font-body text-base text-ink rounded-none min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
               errors.email ? "border-flame" : "border-rule focus:border-amber"
             }`}
           />
           {errors.email && (
-            <span className="font-mono text-[11px] text-flame">{errors.email}</span>
+            <span className="font-mono text-xs text-flame">{errors.email}</span>
           )}
         </div>
 
@@ -217,12 +217,12 @@ function ContactFormContent() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+971 50 123 4567"
-            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+            className={`bg-linen border px-4 py-3 font-body text-base text-ink rounded-none min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
               errors.phone ? "border-flame" : "border-rule focus:border-amber"
             }`}
           />
           {errors.phone && (
-            <span className="font-mono text-[11px] text-flame">{errors.phone}</span>
+            <span className="font-mono text-xs text-flame">{errors.phone}</span>
           )}
         </div>
 
@@ -241,7 +241,7 @@ function ContactFormContent() {
             value={formData.product}
             onChange={handleChange}
             placeholder="Base Oil SN 500, Gasoil D2, etc."
-            className="bg-linen border border-rule p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
+            className="bg-linen border border-rule px-4 py-3 font-body text-base text-ink rounded-none min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
           />
         </div>
 
@@ -260,7 +260,7 @@ function ContactFormContent() {
             value={formData.quantity}
             onChange={handleChange}
             placeholder="5,000 MT / Flexitank 21.5 MT"
-            className="bg-linen border border-rule p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
+            className="bg-linen border border-rule px-4 py-3 font-body text-base text-ink rounded-none min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
           />
         </div>
 
@@ -279,7 +279,7 @@ function ContactFormContent() {
             value={formData.dischargePort}
             onChange={handleChange}
             placeholder="Jebel Ali / Hamriyah / Singapore"
-            className="bg-linen border border-rule p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
+            className="bg-linen border border-rule px-4 py-3 font-body text-base text-ink rounded-none min-h-[48px] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus:border-amber w-full"
           />
         </div>
 
@@ -299,22 +299,22 @@ function ContactFormContent() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Please detail required viscosity parameters, delivery timeline, or commercial terms..."
-            className={`bg-linen border p-3 font-body text-sm text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
+            className={`bg-linen border px-4 py-3 font-body text-base text-ink rounded-none focus:outline-none focus-visible:ring-2 focus-visible:ring-amber w-full ${
               errors.message ? "border-flame" : "border-rule focus:border-amber"
             }`}
           />
           {errors.message && (
-            <span className="font-mono text-[11px] text-flame">{errors.message}</span>
+            <span className="font-mono text-xs text-flame">{errors.message}</span>
           )}
         </div>
 
-        {/* Submit Button */}
+        {/* Submit Button (Full Width, 48px min height) */}
         <div className="pt-2 w-full">
           <Button
             type="submit"
             variant="amber"
             disabled={isSubmitting}
-            className="w-full py-4 text-center disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-4 min-h-[48px] inline-flex items-center justify-center text-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "TRANSMITTING TO TRADING DESK..." : "SUBMIT COMMERCIAL INQUIRY"}
           </Button>

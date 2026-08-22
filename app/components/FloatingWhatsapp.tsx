@@ -8,7 +8,7 @@ export const FloatingWhatsapp: React.FC = () => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Hamburg Trading Desk on WhatsApp"
-      className="fixed bottom-[24px] right-[24px] z-50 w-[52px] h-[52px] rounded-full bg-moss hover:bg-[#4d7522] text-white shadow-2xl transition-transform hover:scale-105 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2 flex items-center justify-center border border-white/20"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-[52px] h-[52px] rounded-full bg-moss hover:bg-[#4d7522] text-white shadow-2xl transition-transform hover:scale-105 duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber focus-visible:ring-offset-2 flex items-center justify-center border border-white/20 shrink-0"
     >
       <svg
         width="24"
