@@ -39,22 +39,21 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-ink border-b border-steel/60 text-paper w-full max-w-full">
+    <header className="sticky top-0 z-50 bg-white border-b border-rule text-ink w-full max-w-full">
       <Container className="flex items-center justify-between h-[60px] gap-2">
-        {/* Logo Lockup Left: Logo mark + HAMBURG wordmark only below 640px */}
+        {/* Logo Lockup Left */}
         <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink min-w-0 min-h-[44px]">
-          {/* Client Droplet Logo Mark (36px height) */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo/hamburg-mark-white.svg"
-            alt="Hamburg logo mark"
-            width="36"
-            height="36"
-            className="h-[36px] w-auto shrink-0"
+            src="/logo/hamburg-logo-128.png"
+            alt="Hamburg"
+            width="128"
+            height="143"
+            className="h-[44px] w-auto shrink-0"
           />
 
           <div className="flex flex-col min-w-0">
-            <span className="font-display font-extrabold text-lg sm:text-xl tracking-[.16em] sm:tracking-[.22em] text-paper leading-none uppercase truncate">
+            <span className="font-display font-extrabold text-lg sm:text-xl tracking-[.16em] sm:tracking-[.22em] text-ink leading-none uppercase truncate">
               {siteConfig.name}
             </span>
             <span className="font-mono text-[9px] text-slate uppercase tracking-wider leading-tight pt-0.5 truncate hidden sm:block">
@@ -73,8 +72,8 @@ export const Header: React.FC = () => {
                 href={link.href}
                 className={`relative flex items-center h-full transition-colors border-b-2 min-h-[44px] ${
                   active
-                    ? "border-amber text-paper"
-                    : "border-transparent text-mist hover:text-paper hover:border-amber"
+                    ? "border-amber text-ink"
+                    : "border-transparent text-slate hover:text-ink hover:border-amber"
                 }`}
               >
                 {link.name}
@@ -87,7 +86,7 @@ export const Header: React.FC = () => {
         <div className="hidden lg:flex items-center">
           <Link
             href="/contact"
-            className="font-display text-xs uppercase tracking-wider font-bold text-amber border border-amber/60 hover:border-amber hover:bg-amber hover:text-ink transition-colors px-4 py-2.5 min-h-[44px] inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+            className="font-display text-xs uppercase tracking-wider font-bold bg-amber text-ink hover:bg-[#d48216] transition-colors px-4 py-2.5 min-h-[44px] inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
           >
             Request Quote
           </Link>
@@ -97,7 +96,7 @@ export const Header: React.FC = () => {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-paper hover:text-amber focus:outline-none shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center"
+          className="lg:hidden p-2 text-ink hover:text-amber focus:outline-none shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Toggle navigation menu"
           aria-expanded={mobileMenuOpen}
         >
@@ -130,7 +129,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu Full-Screen Overlay Panel */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[60px] z-50 bg-ink text-paper flex flex-col justify-between p-6 overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-[60px] z-50 bg-white text-ink flex flex-col justify-between p-6 overflow-y-auto">
           <nav className="flex flex-col w-full font-display font-bold text-[20px] uppercase tracking-wider">
             {siteConfig.navLinks.map((link) => {
               const active = isActive(link.href);
@@ -139,10 +138,10 @@ export const Header: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`h-[56px] flex items-center px-4 border-b border-steel/40 transition-colors ${
+                  className={`h-[56px] flex items-center px-4 border-b border-rule transition-colors ${
                     active
-                      ? "text-amber bg-steel/30 border-amber"
-                      : "text-paper hover:text-amber hover:bg-steel/20"
+                      ? "text-ink bg-linen border-b-2 border-amber"
+                      : "text-slate hover:text-ink hover:bg-linen"
                   }`}
                 >
                   {link.name}
@@ -151,7 +150,7 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          <div className="pt-6 border-t border-steel/60 flex flex-col gap-4 w-full">
+          <div className="pt-6 border-t border-rule flex flex-col gap-4 w-full">
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}

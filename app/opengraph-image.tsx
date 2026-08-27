@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { logo512Base64 } from "./logo512b64";
 
 export const runtime = "edge";
 
@@ -27,26 +28,21 @@ export default async function Image() {
           border: "16px solid #F5F6F7",
         }}
       >
-        {/* Header Lockup: Hamburg Droplet Mark + Company Name */}
-        <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-          {/* hamburg-mark.svg Full Color Droplet Mark */}
-          <svg
-            width="72"
-            height="72"
-            viewBox="0 0 48 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M24 6C24 6 38 20 38 28C38 35.7 31.7 42 24 42C16.3 42 10 35.7 10 28C10 20 24 6 24 6Z" fill="#D9531E"/>
-            <path d="M24 6C24 6 38 20 38 28C38 31.2 36.9 34.1 35.1 36.4C32.4 31.5 27.2 28 21.2 28C18.2 28 15.4 28.9 13.1 30.4C11.1 27 10 22.8 10 28C10 20 24 6 24 6Z" fill="#5E8C2A" opacity="0.85"/>
-            <path d="M24 6C24 6 30 14 30 19C30 20.3 29.5 21.5 28.7 22.5C26.5 19.5 22.8 17.5 18.5 17.5C17.6 17.5 16.7 17.6 15.9 17.8C18.2 13.8 24 6 24 6Z" fill="#14618E"/>
-            <path d="M24 16C24 16 31 24 31 29C31 32.9 27.9 36 24 36C20.1 36 17 32.9 17 29C17 24 24 16 24 16Z" fill="#E5901C"/>
-          </svg>
+        {/* Header Lockup: Hamburg Logo + Company Name */}
+        <div style={{ display: "flex", alignItems: "center", gap: "28px" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logo512Base64}
+            alt="Hamburg"
+            width="100"
+            height="112"
+            style={{ width: "100px", height: "112px" }}
+          />
 
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span
               style={{
-                fontSize: "42px",
+                fontSize: "44px",
                 fontWeight: "800",
                 letterSpacing: "0.22em",
                 color: "#0F1E26",
@@ -61,7 +57,7 @@ export default async function Image() {
                 fontFamily: "monospace",
                 color: "#56676F",
                 letterSpacing: "0.15em",
-                marginTop: "6px",
+                marginTop: "8px",
               }}
             >
               REFINED OIL PRODUCTS TRADING LLC

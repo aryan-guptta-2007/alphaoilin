@@ -12,14 +12,13 @@ export const Footer: React.FC = () => {
           {/* Group 1: Address & Contact Block */}
           <div className="md:col-span-5 flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              {/* Client Droplet Logo Mark (32px height) */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo/hamburg-mark-white.svg"
-                alt="Hamburg logo mark"
-                width="32"
-                height="32"
-                className="h-[32px] w-auto shrink-0"
+                src="/logo/hamburg-logo-96.png"
+                alt="Hamburg"
+                width="96"
+                height="107"
+                className="h-[36px] w-auto shrink-0"
               />
               <div className="flex flex-col">
                 <span className="font-display font-extrabold text-xl tracking-[.24em] text-paper uppercase">
