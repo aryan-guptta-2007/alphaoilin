@@ -33,7 +33,7 @@ export default function AboutPage() {
                 Supply chains from the Gulf to global discharge ports
               </h2>
               <p className="max-w-[65ch] max-w-full">
-                Headquartered at Tejasvi Business Center in Garhoud Deira, Dubai, Hamburg Refined Oil Products Trading LLC connects Gulf refinery production with industrial buyers. We focus on Group I solvent neutral base oils (SN 150, SN 500, Bright Stock BS 150), process fluids, asphalt bitumen, and gas oils.
+                Headquartered at Tejasvi Business Center in Garhoud Deira, Dubai, Hamburg Refined Oil Products Trading LLC connects Gulf refinery production with industrial buyers. We focus on Group I solvent neutral base oils (SN 150, SN 500, Bright Stock BS 150), process fluids, bitumen, and gas oils.
               </p>
               <p className="max-w-[65ch] max-w-full">
                 We maintain direct relationships with refineries across the Gulf. We work without unnecessary intermediaries so your commercial terms and delivery schedules remain clear.

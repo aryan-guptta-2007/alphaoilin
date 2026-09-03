@@ -207,7 +207,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 </h2>
                 {product.distillationTemp && (
                   <span className="font-mono text-xs text-amber bg-amber/10 border border-amber/30 px-3 py-1 uppercase font-semibold">
-                    {product.distillationTemp === "Blended" ? "BLENDED" : `TEMP CUT: ${product.distillationTemp}`}
+                    {product.distillationTemp === "Blended" ? "BLENDED" : `BOILING RANGE: ${product.distillationTemp}`}
                   </span>
                 )}
               </div>

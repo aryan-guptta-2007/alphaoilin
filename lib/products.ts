@@ -90,18 +90,54 @@ export interface ProductDetail {
 export const COA_FOOTNOTE =
   "Figures are typical values, binding specs are on the COA for your parcel.";
 
-export const distillationProducts: DistillationProduct[] = [
+export const tradeDirectoryProducts: DistillationProduct[] = [
   {
-    id: "naphtha",
-    slug: "naphtha",
-    name: "Virgin Naphtha (Light & Heavy)",
-    tempRange: "30°C – 200°C",
-    note: "Steam cracking feedstock & high-octane blendstock",
-    swatchColor: "#E5901C",
-    href: "/products/naphtha",
-    imageSrc: "/images/products/naphtha.svg",
-    imageAlt: "Petrochemical plant atmospheric distillation towers for virgin naphtha",
-    imageCaption: "Primary fractional distillation columns producing light and heavy virgin naphtha.",
+    id: "base-oil",
+    slug: "base-oil",
+    name: "Solvent Neutral Base Oils (SN 150 / 500 / BS 150)",
+    tempRange: "300°C – 550°C",
+    note: "Group I virgin base stocks for lubricants & greases",
+    swatchColor: "#5E8C2A",
+    href: "/products/base-oil",
+    imageSrc: "/images/products/base-oil.svg",
+    imageAlt: "Amber virgin base oil sample tested in laboratory glass beaker",
+    imageCaption: "ASTM D445 kinematic viscosity testing on Group I base oil sample.",
+  },
+  {
+    id: "bitumen",
+    slug: "bitumen",
+    name: "Bitumen (60/70 & 80/100)",
+    tempRange: "> 550°C",
+    note: "Penetration grade paving bitumen & oxidised bitumen",
+    swatchColor: "#D9531E",
+    href: "/products/bitumen",
+    imageSrc: "/images/products/bitumen.svg",
+    imageAlt: "Fresh black bitumen paving surface layer",
+    imageCaption: "Penetration grade 60/70 bitumen binder application for road paving.",
+  },
+  {
+    id: "chemicals",
+    slug: "chemicals",
+    name: "Chemicals",
+    tempRange: "Blended",
+    note: "Oilfield & industrial chemical systems and solvents",
+    swatchColor: "#14618E",
+    href: "/products/chemicals",
+    imageSrc: "/images/products/chemicals.svg",
+    imageAlt: "Line illustration of chemical sacks on a pallet",
+    imageCaption: "Oilfield and industrial chemical systems, drilling fluids, and solvents.",
+  },
+  {
+    id: "fuel-oil",
+    slug: "fuel-oil",
+    name: "Marine & Industrial Fuel Oil (180 / 380 cSt)",
+    tempRange: "350°C – 650°C",
+    note: "Heavy residual fuel oil for power & bunkering",
+    swatchColor: "#56676F",
+    href: "/products/fuel-oil",
+    imageSrc: "/images/products/fuel-oil.svg",
+    imageAlt: "Heavy fuel oil terminal pipeline manifold and loading arm",
+    imageCaption: "High-flow pipeline manifold for CST 180 and CST 380 marine fuel loading.",
   },
   {
     id: "gas-oil",
@@ -116,6 +152,18 @@ export const distillationProducts: DistillationProduct[] = [
     imageCaption: "10PPM ULSD and gas oil D2 bulk storage at Gulf refining facility.",
   },
   {
+    id: "grease",
+    slug: "grease",
+    name: "Lithium Complex Industrial Greases",
+    tempRange: "350°C – 500°C",
+    note: "NLGI 2 & 3 extreme pressure lubricating greases",
+    swatchColor: "#E5901C",
+    href: "/products/grease",
+    imageSrc: "/images/products/grease.svg",
+    imageAlt: "High-temperature lithium complex grease applied to industrial bearings",
+    imageCaption: "Extreme-pressure NLGI Grade 2 lithium grease formulation.",
+  },
+  {
     id: "hydrocarbon-oil",
     slug: "hydrocarbon-oil",
     name: "Industrial Hydrocarbon Solvents",
@@ -128,16 +176,16 @@ export const distillationProducts: DistillationProduct[] = [
     imageCaption: "White spirit and aliphatic hydrocarbon solvent drum storage.",
   },
   {
-    id: "base-oil",
-    slug: "base-oil",
-    name: "Solvent Neutral Base Oils (SN 150 / 500 / BS 150)",
-    tempRange: "300°C – 550°C",
-    note: "Group I virgin base stocks for lubricants & greases",
-    swatchColor: "#3D5B66",
-    href: "/products/base-oil",
-    imageSrc: "/images/products/base-oil.svg",
-    imageAlt: "Amber virgin base oil sample tested in laboratory glass beaker",
-    imageCaption: "ASTM D445 kinematic viscosity testing on Group I base oil sample.",
+    id: "naphtha",
+    slug: "naphtha",
+    name: "Virgin Naphtha (Light & Heavy)",
+    tempRange: "30°C – 200°C",
+    note: "Steam cracking feedstock & high-octane blendstock",
+    swatchColor: "#E5901C",
+    href: "/products/naphtha",
+    imageSrc: "/images/products/naphtha.svg",
+    imageAlt: "Petrochemical plant atmospheric distillation towers for virgin naphtha",
+    imageCaption: "Primary fractional distillation columns producing light and heavy virgin naphtha.",
   },
   {
     id: "rubber-process-oil",
@@ -151,53 +199,53 @@ export const distillationProducts: DistillationProduct[] = [
     imageAlt: "Industrial tyre vulcanization and rubber compound manufacturing",
     imageCaption: "Aromatic and paraffinic rubber process oil blending for tire manufacturing.",
   },
+];
+
+export const distillationProducts = tradeDirectoryProducts;
+
+export interface RefineryCut {
+  name: string;
+  slug: string;
+  href: string;
+  tempRange: string;
+  color: string;
+}
+
+export const refineryCuts: RefineryCut[] = [
   {
-    id: "grease",
-    slug: "grease",
-    name: "Lithium Complex Industrial Greases",
-    tempRange: "350°C – 500°C",
-    note: "NLGI 2 & 3 extreme pressure lubricating greases",
-    swatchColor: "#E5901C",
-    href: "/products/grease",
-    imageSrc: "/images/products/grease.svg",
-    imageAlt: "High-temperature lithium complex grease applied to industrial bearings",
-    imageCaption: "Extreme-pressure NLGI Grade 2 lithium grease formulation.",
+    name: "Naphtha",
+    slug: "naphtha",
+    href: "/products/naphtha",
+    tempRange: "30–200 °C",
+    color: "#7FB7DA",
   },
   {
-    id: "fuel-oil",
+    name: "Gas oil",
+    slug: "gas-oil",
+    href: "/products/gas-oil",
+    tempRange: "200–350 °C",
+    color: "#14618E",
+  },
+  {
+    name: "Base oil",
+    slug: "base-oil",
+    href: "/products/base-oil",
+    tempRange: "290–560 °C",
+    color: "#5E8C2A",
+  },
+  {
+    name: "Fuel oil",
     slug: "fuel-oil",
-    name: "Marine & Industrial Fuel Oil (180 / 380 cSt)",
-    tempRange: "350°C – 650°C",
-    note: "Heavy residual fuel oil for power & bunkering",
-    swatchColor: "#0F2C39",
     href: "/products/fuel-oil",
-    imageSrc: "/images/products/fuel-oil.svg",
-    imageAlt: "Heavy fuel oil terminal pipeline manifold and loading arm",
-    imageCaption: "High-flow pipeline manifold for CST 180 and CST 380 marine fuel loading.",
+    tempRange: "Residue / 350–650 °C",
+    color: "#E5901C",
   },
   {
-    id: "bitumen",
+    name: "Bitumen",
     slug: "bitumen",
-    name: "Asphalt Bitumen (60/70 & 80/100)",
-    tempRange: "> 550°C",
-    note: "Penetration grade paving bitumen & oxidised asphalt",
-    swatchColor: "#07171E",
     href: "/products/bitumen",
-    imageSrc: "/images/products/bitumen.svg",
-    imageAlt: "Fresh black asphalt bitumen paving surface layer",
-    imageCaption: "Penetration grade 60/70 asphalt binder application for road paving.",
-  },
-  {
-    id: "chemicals",
-    slug: "chemicals",
-    name: "Chemicals",
-    tempRange: "Blended",
-    note: "Drilling fluid systems, cementing, stimulation & industrial solvents",
-    swatchColor: "#E5901C",
-    href: "/products/chemicals",
-    imageSrc: "/images/products/chemicals.svg",
-    imageAlt: "Line illustration of chemical sacks on a pallet",
-    imageCaption: "Oilfield and industrial chemical systems, drilling fluids, and solvents.",
+    tempRange: "Residue / > 550 °C",
+    color: "#D9531E",
   },
 ];
 
@@ -345,6 +393,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "bs150", header: "BS 150" },
         ],
         rows: [
+          { parameter: "Distillation Boiling Range", method: "ASTM D1160", sn150: "300 – 420 °C", sn500: "380 – 500 °C", bs150: "480 – 550 °C" },
           { parameter: "Kinematic Viscosity @ 40°C", method: "ASTM D445", sn150: "28.0 – 32.0 cSt", sn500: "94.0 – 106.0 cSt", bs150: "460.0 – 520.0 cSt" },
           { parameter: "Kinematic Viscosity @ 100°C", method: "ASTM D445", sn150: "5.0 – 5.5 cSt", sn500: "10.5 – 11.5 cSt", bs150: "30.0 – 34.0 cSt" },
           { parameter: "Viscosity Index", method: "ASTM D2270", sn150: "Min 95", sn500: "Min 95", bs150: "Min 95" },
@@ -377,12 +426,12 @@ export const productsData: Record<string, ProductDetail> = {
 
   bitumen: {
     slug: "bitumen",
-    name: "Penetration Grade Asphalt Bitumen (60/70 & 80/100)",
-    tagline: "High-grade vacuum bottoms petroleum bitumen for highway construction, asphalt paving, and waterproofing membranes.",
+    name: "Bitumen (60/70 & 80/100)",
+    tagline: "High-grade vacuum bottoms petroleum bitumen for highway construction, road paving, and waterproofing membranes.",
     distillationTemp: "> 550°C",
     imageSrc: "/images/products/bitumen.svg",
-    imageAlt: "Fresh black asphalt bitumen paving surface layer",
-    imageCaption: "Penetration grade 60/70 asphalt binder application for road paving.",
+    imageAlt: "Fresh black bitumen paving surface layer",
+    imageCaption: "Penetration grade 60/70 bitumen binder application for road paving.",
     msdsUrl: "/docs/msds/bitumen.pdf",
     msdsCards: [
       {
@@ -402,7 +451,7 @@ export const productsData: Record<string, ProductDetail> = {
     ],
     introParagraphs: [
       "Hamburg Refined Oil Products Trading LLC supplies premium penetration grade petroleum bitumen manufactured from vacuum distillation residue. Our bitumen grades 60/70 and 80/100 adhere to international EN 12591 and ASTM D946 standards.",
-      "Recognized for superior viscoelastic properties, temperature susceptibility, and weather resistance, our asphalt bitumen is utilized extensively in heavy highway paving, airport runway construction, roofing felt manufacturing, and industrial waterproofing applications.",
+      "Recognized for superior viscoelastic properties, temperature susceptibility, and weather resistance, our bitumen is utilized extensively in heavy highway paving, airport runway construction, roofing felt manufacturing, and industrial waterproofing applications.",
     ],
     specTables: [
       {
@@ -414,6 +463,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "bitumen80100", header: "Bitumen 80/100" },
         ],
         rows: [
+          { parameter: "Distillation Cut Range", method: "Atm / Vac Cut", bitumen6070: "> 550 °C (Vacuum residue)", bitumen80100: "> 550 °C (Vacuum residue)" },
           { parameter: "Penetration @ 25°C (0.1 mm)", method: "ASTM D5 / EN 1426", bitumen6070: "60 – 70", bitumen80100: "80 – 100" },
           { parameter: "Softening Point (°C)", method: "ASTM D36 / EN 1427", bitumen6070: "49 – 56 °C", bitumen80100: "45 – 52 °C" },
           { parameter: "Ductility @ 25°C (cm)", method: "ASTM D113 / EN 13398", bitumen6070: "Min 100 cm", bitumen80100: "Min 100 cm" },
@@ -485,6 +535,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "fo380", header: "Fuel Oil 380 cSt" },
         ],
         rows: [
+          { parameter: "Distillation Boiling Range", method: "Atm / Vac Cut", fo180: "350 – 650 °C (Residue)", fo380: "350 – 650 °C (Residue)" },
           { parameter: "Kinematic Viscosity @ 50°C", method: "ISO 3104 / ASTM D445", fo180: "Max 180 cSt", fo380: "Max 380 cSt" },
           { parameter: "Density @ 15°C (kg/m³)", method: "ISO 3675 / ASTM D4052", fo180: "Max 991.0", fo380: "Max 991.0" },
           { parameter: "Flash Point (Pensky-Martens)", method: "ISO 2719 / ASTM D93", fo180: "Min 60.0 °C", fo380: "Min 60.0 °C" },
@@ -554,6 +605,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "gasoilD2", header: "Gas Oil D2" },
         ],
         rows: [
+          { parameter: "Distillation Range (95% Rec)", method: "EN ISO 3405 / ASTM D86", ulsd10: "180 – 360 °C", gasoilD2: "180 – 360 °C" },
           { parameter: "Density @ 15°C (g/cm³)", method: "EN ISO 12185 / ASTM D4052", ulsd10: "0.820 – 0.845", gasoilD2: "0.820 – 0.860" },
           { parameter: "Kinematic Viscosity @ 40°C", method: "EN ISO 3104 / ASTM D445", ulsd10: "2.00 – 4.50 cSt", gasoilD2: "2.00 – 5.50 cSt" },
           { parameter: "Cetane Index", method: "EN ISO 4264 / ASTM D976", ulsd10: "Min 51.0", gasoilD2: "Min 48.0" },
@@ -622,6 +674,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "nlgi3", header: "NLGI Grade 3" },
         ],
         rows: [
+          { parameter: "Base Stock Boiling Range", method: "ASTM D1160", nlgi2: "350 – 500 °C", nlgi3: "350 – 500 °C" },
           { parameter: "Thickener Type", method: "Visual / Lab", nlgi2: "Lithium Complex", nlgi3: "Lithium Complex" },
           { parameter: "Worked Penetration @ 25°C (0.1 mm)", method: "ASTM D217", nlgi2: "265 – 295", nlgi3: "220 – 250" },
           { parameter: "Dropping Point (°C)", method: "ASTM D2265", nlgi2: "Min 260 °C", nlgi3: "Min 260 °C" },
@@ -689,6 +742,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "hvn", header: "Heavy Naphtha (HVN)" },
         ],
         rows: [
+          { parameter: "Distillation Boiling Range", method: "ASTM D86", lvn: "30 – 115 °C", hvn: "90 – 200 °C" },
           { parameter: "Specific Gravity @ 15°C", method: "ASTM D4052", lvn: "0.650 – 0.700", hvn: "0.720 – 0.760" },
           { parameter: "Initial Boiling Point (IBP)", method: "ASTM D86", lvn: "Typ 35 °C", hvn: "Typ 90 °C" },
           { parameter: "Final Boiling Point (FBP)", method: "ASTM D86", lvn: "Max 115 °C", hvn: "Max 190 °C" },
@@ -755,6 +809,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "rpoParaffinic", header: "RPO Paraffinic" },
         ],
         rows: [
+          { parameter: "Distillation Cut Range", method: "ASTM D1160", rpoAromatic: "320 – 520 °C", rpoParaffinic: "320 – 520 °C" },
           { parameter: "Kinematic Viscosity @ 100°C", method: "ASTM D445", rpoAromatic: "18.0 – 24.0 cSt", rpoParaffinic: "10.0 – 15.0 cSt" },
           { parameter: "Kinematic Viscosity @ 40°C", method: "ASTM D445", rpoAromatic: "380 – 500 cSt", rpoParaffinic: "90 – 120 cSt" },
           { parameter: "Flash Point (COC)", method: "ASTM D92", rpoAromatic: "Min 220 °C", rpoParaffinic: "Min 230 °C" },
@@ -822,6 +877,7 @@ export const productsData: Record<string, ProductDetail> = {
           { key: "solvent100", header: "Solvent C9 / Aromatic" },
         ],
         rows: [
+          { parameter: "Distillation Boiling Range", method: "ASTM D86", whiteSpirit: "145 – 205 °C", solvent100: "155 – 180 °C" },
           { parameter: "Specific Gravity @ 15°C", method: "ASTM D4052", whiteSpirit: "0.775 – 0.795", solvent100: "0.865 – 0.885" },
           { parameter: "Initial Boiling Point (IBP)", method: "ASTM D86", whiteSpirit: "Min 145 °C", solvent100: "Min 155 °C" },
           { parameter: "Final Boiling Point (FBP)", method: "ASTM D86", whiteSpirit: "Max 205 °C", solvent100: "Max 180 °C" },

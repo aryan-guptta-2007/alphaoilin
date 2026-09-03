@@ -19,9 +19,9 @@ export default function ProductsIndexPage() {
   return (
     <section className="py-6 lg:py-10 pb-[88px] lg:pb-10 bg-paper min-h-screen">
       <Container className="px-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 lg:gap-12 w-full max-w-4xl mx-auto">
+        <div className="flex flex-col w-full max-w-4xl mx-auto">
           {/* 1. Page Title "PRODUCTS" - Centred, Archivo 800, 38px, uppercase, ink. Nothing above it. */}
-          <h1 className="font-display font-extrabold text-[38px] lg:text-[48px] text-ink uppercase text-center leading-none tracking-tight pt-2">
+          <h1 className="font-display font-extrabold text-[38px] lg:text-[48px] text-ink uppercase text-center leading-none tracking-tight pt-2 mb-4">
             PRODUCTS
           </h1>
 
@@ -30,9 +30,9 @@ export default function ProductsIndexPage() {
 
           {/* 3. First Product's Full Content Inline */}
           {firstProduct && (
-            <div className="flex flex-col gap-10 lg:gap-[64px] w-full pt-16 sm:pt-20 lg:pt-12">
+            <div className="flex flex-col gap-10 lg:gap-[64px] w-full mt-8">
               {/* ITEM 1: Product Illustration */}
-              <div className="w-full flex justify-center my-8 shrink-0">
+              <div className="w-full flex justify-center mb-8 shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={firstProduct.imageSrc}
@@ -168,7 +168,7 @@ export default function ProductsIndexPage() {
                   </h3>
                   {firstProduct.distillationTemp && (
                     <span className="font-mono text-xs text-amber bg-amber/10 border border-amber/30 px-3 py-1 uppercase font-semibold">
-                      TEMP CUT: {firstProduct.distillationTemp}
+                      BOILING RANGE: {firstProduct.distillationTemp}
                     </span>
                   )}
                 </div>

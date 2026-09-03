@@ -1,68 +1,58 @@
 import React from "react";
 import Link from "next/link";
-import { distillationProducts } from "@/lib/products";
+import { tradeDirectoryProducts } from "@/lib/products";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const DistillationColumn: React.FC = () => {
   return (
     <div className="w-full bg-card border border-rule text-ink p-4 sm:p-8 flex flex-col gap-6">
-      {/* Column Header */}
+      {/* Directory Header */}
       <div className="flex flex-col gap-2 border-b border-rule pb-4">
-        <div className="flex items-center justify-between">
-          <Eyebrow>By boiling range</Eyebrow>
-          <span className="font-mono text-[10px] text-slate uppercase tracking-widest bg-linen px-2 py-0.5 border border-rule font-semibold">
-            LIGHT → HEAVY
-          </span>
-        </div>
+        <Eyebrow>Product directory</Eyebrow>
         <h3 className="font-display font-extrabold text-xl sm:text-2xl text-ink tracking-tight">
-          The cut list
+          What we trade
         </h3>
         <p className="font-mono text-xs text-slate">
-          Products ordered by boiling point (lightest fractions at top)
+          Commercial energy commodities, base stocks, and specialty chemicals
         </p>
       </div>
 
-      {/* Distillation Rows List */}
+      {/* Directory Rows List (Alphabetical, No Temperature Badges) */}
       <div className="flex flex-col border border-rule relative divide-y divide-rule bg-card">
-        {distillationProducts.map((product, index) => (
+        {tradeDirectoryProducts.map((product, index) => (
           <Link
             key={product.id}
             href={product.href}
-            className="group relative flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-card hover:bg-linen transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber gap-3 min-h-[44px]"
-            aria-label={`${product.name}, boiling range ${product.tempRange}`}
+            className="group relative flex items-center justify-between p-4 bg-card hover:bg-linen transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber gap-3 min-h-[44px]"
+            aria-label={`${product.name} - ${product.note}`}
           >
-            {/* Desktop & Mobile Main Row Stack */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full min-w-0">
-              <div className="flex items-start gap-3 w-full sm:w-auto min-w-0">
-                {/* Index & Swatch */}
-                <div className="flex items-center gap-2 shrink-0 pt-0.5 sm:pt-0">
-                  <span className="font-mono text-xs text-slate font-bold w-5">
-                    {(index + 1).toString().padStart(2, "0")}
-                  </span>
-                  <span
-                    className="w-3.5 h-3.5 shrink-0 border border-black/10"
-                    style={{ backgroundColor: product.swatchColor }}
-                    aria-hidden="true"
-                  />
-                </div>
+            {/* Product Details: Index, Swatch, Name, and Note */}
+            <div className="flex items-start sm:items-center gap-3 w-full min-w-0 flex-1">
+              {/* Index & Swatch */}
+              <div className="flex items-center gap-2 shrink-0 pt-0.5 sm:pt-0">
+                <span className="font-mono text-xs text-slate font-bold w-5">
+                  {(index + 1).toString().padStart(2, "0")}
+                </span>
+                <span
+                  className="w-3.5 h-3.5 shrink-0 border border-black/10"
+                  style={{ backgroundColor: product.swatchColor }}
+                  aria-hidden="true"
+                />
+              </div>
 
-                {/* Line 1: Product Name, Line 2: Note */}
-                <div className="flex flex-col min-w-0 flex-1">
-                  <span className="font-display font-bold text-base text-ink group-hover:text-amber transition-colors break-words">
-                    {product.name}
-                  </span>
-                  <span className="font-mono text-xs text-slate pt-0.5 leading-normal">
-                    {product.note}
-                  </span>
-                </div>
+              {/* Line 1: Product Name, Line 2: Note */}
+              <div className="flex flex-col min-w-0 flex-1">
+                <span className="font-display font-bold text-base text-ink group-hover:text-amber transition-colors break-words">
+                  {product.name}
+                </span>
+                <span className="font-mono text-xs text-slate pt-0.5 leading-normal">
+                  {product.note}
+                </span>
               </div>
             </div>
 
-            {/* Line 3 on mobile: Temp Badge & Arrow aligned left */}
-            <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto shrink-0 pt-1 sm:pt-0">
-              <span className="font-mono text-xs font-semibold text-ink bg-linen group-hover:bg-amber/10 group-hover:text-amber group-hover:border-amber/30 px-2.5 py-1 border border-rule transition-colors">
-                {product.tempRange}
-              </span>
+            {/* Right Arrow */}
+            <div className="flex items-center justify-end shrink-0 pl-2">
               <svg
                 width="16"
                 height="16"
@@ -82,12 +72,6 @@ export const DistillationColumn: React.FC = () => {
             </div>
           </Link>
         ))}
-      </div>
-
-      {/* Column Footer Spec Note */}
-      <div className="border-t border-rule pt-3 flex items-center justify-between font-mono text-xs text-slate uppercase">
-        <span>THERMAL DISTILLATION SPECS</span>
-        <span className="text-slate font-semibold">ATM / VAC CUTS</span>
       </div>
     </div>
   );
