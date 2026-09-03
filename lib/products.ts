@@ -60,6 +60,7 @@ export const productNavItems: ProductNavItem[] = [
   { name: "Hydrocarbon oil", slug: "hydrocarbon-oil", href: "/products/hydrocarbon-oil" },
   { name: "Naphtha", slug: "naphtha", href: "/products/naphtha" },
   { name: "Rubber process oil", slug: "rubber-process-oil", href: "/products/rubber-process-oil" },
+  { name: "Chemicals", slug: "chemicals", href: "/products/chemicals" },
 ];
 
 export interface MsdsCard {
@@ -185,6 +186,18 @@ export const distillationProducts: DistillationProduct[] = [
     imageSrc: "/images/products/bitumen.svg",
     imageAlt: "Fresh black asphalt bitumen paving surface layer",
     imageCaption: "Penetration grade 60/70 asphalt binder application for road paving.",
+  },
+  {
+    id: "chemicals",
+    slug: "chemicals",
+    name: "Chemicals",
+    tempRange: "Blended",
+    note: "Drilling fluid systems, cementing, stimulation & industrial solvents",
+    swatchColor: "#E5901C",
+    href: "/products/chemicals",
+    imageSrc: "/images/products/chemicals.svg",
+    imageAlt: "Line illustration of chemical sacks on a pallet",
+    imageCaption: "Oilfield and industrial chemical systems, drilling fluids, and solvents.",
   },
 ];
 
@@ -837,5 +850,64 @@ export const productsData: Record<string, ProductDetail> = {
       { title: "Hydrocarbon Solvent Purity Certification", type: "PDF", size: "330 KB", url: "/docs/product-list.pdf" },
       { title: "Hydrocarbon Oil Safety Data Sheet (SDS)", type: "PDF", size: "475 KB", url: "/docs/product-list.pdf" },
     ],
+  },
+
+  chemicals: {
+    slug: "chemicals",
+    name: "Chemicals",
+    tagline: "Oilfield and industrial chemicals",
+    distillationTemp: "Blended",
+    imageSrc: "/images/products/chemicals.svg",
+    imageAlt: "Line illustration of chemical sacks on a pallet",
+    imageCaption: "Oilfield and industrial chemical systems, drilling fluids, and solvents.",
+    msdsCards: [],
+    gradeGroups: [
+      {
+        groupName: "Drilling fluids",
+        grades: [
+          { name: "Water-base mud products" },
+          { name: "Cementing chemicals" },
+          { name: "Stimulation chemicals" },
+          { name: "Production chemicals" },
+          { name: "Fracturing chemicals" },
+        ],
+      },
+      {
+        groupName: "Solvents",
+        grades: [
+          { name: "White spirit" },
+          { name: "Hexane" },
+          { name: "Mixed aromatics" },
+          { name: "Mixed glycols" },
+        ],
+      },
+      {
+        groupName: "Recovered",
+        grades: [
+          { name: "Spent solvents" },
+          { name: "Heavy aromatics" },
+          { name: "PyGas" },
+        ],
+      },
+    ],
+    introParagraphs: [
+      "Hamburg supplies oilfield and industrial chemicals alongside its refined product lines, drawing on the group's own production and blending. The range covers drilling fluid systems, cementing and stimulation chemicals, and industrial solvents.",
+      "Chemicals are supplied in jumbo bags, drums, and IBC totes depending on the product, with the relevant safety data sheet issued for every shipment.",
+    ],
+    specTables: [],
+    applications: [
+      "Drilling operations",
+      "Well cementing",
+      "Industrial cleaning",
+      "Chemical synthesis",
+      "Formulation and blending",
+    ],
+    packingOptions: [
+      "Jumbo bags",
+      "200 kg drums",
+      "IBC totes",
+      "Bulk",
+    ],
+    documents: [],
   },
 };

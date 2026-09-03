@@ -14,10 +14,11 @@ export const siteConfig = {
     { name: "Contact", href: "/contact" },
   ],
   productLinks: [
-    { name: "Base Oils (SN 150, SN 500, BS 150)", href: "/products#base-oils" },
-    { name: "Industrial Lubricants", href: "/products#lubricants" },
-    { name: "Process & Transformer Oils", href: "/products#process-oils" },
-    { name: "Fuel Oil & Gasoil", href: "/products#fuel-oil" },
+    { name: "Base Oils (SN 150, SN 500, BS 150)", href: "/products/base-oil" },
+    { name: "Industrial Lubricants", href: "/products/grease" },
+    { name: "Process & Transformer Oils", href: "/products/rubber-process-oil" },
+    { name: "Fuel Oil & Gasoil", href: "/products/fuel-oil" },
+    { name: "Oilfield & Industrial Chemicals", href: "/products/chemicals" },
   ],
   companyLinks: [
     { name: "Company Profile", href: "/about" },

@@ -17,7 +17,7 @@ export default function ProductsIndexPage() {
   const firstProduct = productsData["base-oil"];
 
   return (
-    <section className="py-6 lg:py-10 bg-paper min-h-screen">
+    <section className="py-6 lg:py-10 pb-[88px] lg:pb-10 bg-paper min-h-screen">
       <Container className="px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:gap-12 w-full max-w-4xl mx-auto">
           {/* 1. Page Title "PRODUCTS" - Centred, Archivo 800, 38px, uppercase, ink. Nothing above it. */}
@@ -95,7 +95,7 @@ export default function ProductsIndexPage() {
               )}
 
               {/* ITEM 5: REQUEST A QUOTE Button */}
-              <div className="w-full pt-1">
+              <div className="w-full pt-1 pb-[88px] lg:pb-0">
                 <Link
                   href="/contact"
                   className="w-full h-[52px] inline-flex items-center justify-center font-display font-bold text-sm uppercase tracking-wider border-2 border-amber text-amber hover:bg-amber hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"

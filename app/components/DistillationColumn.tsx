@@ -37,7 +37,7 @@ export const DistillationColumn: React.FC = () => {
                 {/* Index & Swatch */}
                 <div className="flex items-center gap-2 shrink-0 pt-0.5 sm:pt-0">
                   <span className="font-mono text-xs text-slate font-bold w-5">
-                    0{index + 1}
+                    {(index + 1).toString().padStart(2, "0")}
                   </span>
                   <span
                     className="w-3.5 h-3.5 shrink-0 border border-black/10"

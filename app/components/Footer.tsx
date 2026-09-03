@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+import { productNavItems } from "@/lib/products";
 import { Container } from "@/components/ui/Container";
 
 export const Footer: React.FC = () => {
@@ -64,19 +65,19 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Group 2: Refined Oil Products Links */}
+          {/* Group 2: Products Links */}
           <div className="md:col-span-4 flex flex-col gap-4 pt-4 md:pt-0">
             <h4 className="font-display text-xs uppercase tracking-wider text-paper font-bold border-b border-steel/60 pb-2">
-              REFINED OIL PRODUCTS
+              PRODUCTS
             </h4>
-            <ul className="flex flex-col gap-3 font-display text-sm font-medium">
-              {siteConfig.productLinks.map((link) => (
-                <li key={link.name}>
+            <ul className="flex flex-col gap-2.5 font-display text-sm font-medium">
+              {productNavItems.map((item) => (
+                <li key={item.slug}>
                   <Link
-                    href={link.href}
-                    className="text-mist hover:text-amber hover:translate-x-1 inline-flex items-center min-h-[44px] transition-all"
+                    href={item.href}
+                    className="text-mist hover:text-amber hover:translate-x-1 inline-flex items-center min-h-[32px] transition-all"
                   >
-                    {link.name}
+                    {item.name}
                   </Link>
                 </li>
               ))}

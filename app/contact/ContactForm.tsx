@@ -309,7 +309,7 @@ function ContactFormContent() {
         </div>
 
         {/* Submit Button (Full Width, 48px min height) */}
-        <div className="pt-2 w-full">
+        <div className="pt-2 w-full pb-[88px] lg:pb-0">
           <Button
             type="submit"
             variant="amber"

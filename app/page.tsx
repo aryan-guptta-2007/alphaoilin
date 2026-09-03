@@ -39,7 +39,7 @@ export default function Home() {
               </p>
 
               {/* Both CTAs full width on mobile, stacked with 12px gap, 44px min tap height */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full max-w-full">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2 w-full max-w-full pb-[88px] lg:pb-0">
                 <Button
                   variant="amber"
                   href="/contact"

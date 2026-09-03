@@ -48,7 +48,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   }
 
   return (
-    <section className="py-6 lg:py-10 bg-paper min-h-screen">
+    <section className="py-6 lg:py-10 pb-[88px] lg:pb-10 bg-paper min-h-screen">
       <Container className="px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:gap-12 w-full max-w-4xl mx-auto">
           {/* PRODUCT TAB GRID DIRECTLY UNDER HEADER */}
@@ -120,7 +120,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             )}
 
             {/* ITEM 5: REQUEST A QUOTE Button */}
-            <div className="w-full pt-1">
+            <div className="w-full pt-1 pb-[88px] lg:pb-0">
               <Link
                 href="/contact"
                 className="w-full h-[52px] inline-flex items-center justify-center font-display font-bold text-sm uppercase tracking-wider border-2 border-amber text-amber hover:bg-amber hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber"
@@ -146,37 +146,51 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                       {group.grades.map((grade, gradeIdx) => {
                         const coaPath =
                           grade.pdfUrl ||
-                          `/docs/coa/${
-                            grade.slug ||
-                            grade.name
-                              .toLowerCase()
-                              .replace(/[^a-z0-9]+/g, "-")
-                          }.pdf`;
-                        return (
-                          <a
-                            key={gradeIdx}
-                            href={coaPath}
-                            download
-                            className="h-[44px] bg-card border border-rule text-ink font-mono text-xs font-medium px-4 inline-flex items-center gap-2 transition-colors hover:bg-linen hover:border-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-amber shrink-0"
-                            title={`Download COA PDF for ${grade.name}`}
-                          >
-                            <span>{grade.name}</span>
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="text-slate group-hover:text-amber shrink-0"
+                          (product.slug === "chemicals"
+                            ? null
+                            : `/docs/coa/${
+                                grade.slug ||
+                                grade.name
+                                  .toLowerCase()
+                                  .replace(/[^a-z0-9]+/g, "-")
+                              }.pdf`);
+
+                        if (coaPath) {
+                          return (
+                            <a
+                              key={gradeIdx}
+                              href={coaPath}
+                              download
+                              className="h-[44px] bg-card border border-rule text-ink font-mono text-xs font-medium px-4 inline-flex items-center gap-2 transition-colors hover:bg-linen hover:border-amber focus:outline-none focus-visible:ring-2 focus-visible:ring-amber shrink-0"
+                              title={`Download COA PDF for ${grade.name}`}
                             >
-                              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                              <polyline points="7 10 12 15 17 10" />
-                              <line x1="12" y1="15" x2="12" y2="3" />
-                            </svg>
-                          </a>
+                              <span>{grade.name}</span>
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="text-slate group-hover:text-amber shrink-0"
+                              >
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                              </svg>
+                            </a>
+                          );
+                        }
+
+                        return (
+                          <span
+                            key={gradeIdx}
+                            className="h-[44px] bg-card border border-rule text-ink font-mono text-xs font-medium px-4 inline-flex items-center shrink-0"
+                          >
+                            {grade.name}
+                          </span>
                         );
                       })}
                     </div>
@@ -193,30 +207,47 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 </h2>
                 {product.distillationTemp && (
                   <span className="font-mono text-xs text-amber bg-amber/10 border border-amber/30 px-3 py-1 uppercase font-semibold">
-                    TEMP CUT: {product.distillationTemp}
+                    {product.distillationTemp === "Blended" ? "BLENDED" : `TEMP CUT: ${product.distillationTemp}`}
                   </span>
                 )}
               </div>
 
-              <span className="font-mono text-xs text-slate uppercase block">
-                Scroll for all columns
-              </span>
+              {product.specTables && product.specTables.length > 0 ? (
+                <>
+                  <span className="font-mono text-xs text-slate uppercase block">
+                    Scroll for all columns
+                  </span>
 
-              <div className="flex flex-col gap-8 w-full">
-                {product.specTables.map((table, tIdx) => (
-                  <div key={tIdx} className="flex flex-col gap-3 w-full">
-                    {table.label && table.label !== "Technical Specifications" && (
-                      <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold">
-                        {table.label}
-                      </h3>
-                    )}
-                    <SpecTable columns={table.columns} data={table.rows} />
-                    <p className="font-mono text-xs text-slate italic pt-1">
-                      * {COA_FOOTNOTE}
-                    </p>
+                  <div className="flex flex-col gap-8 w-full">
+                    {product.specTables.map((table, tIdx) => (
+                      <div key={tIdx} className="flex flex-col gap-3 w-full">
+                        {table.label && table.label !== "Technical Specifications" && (
+                          <h3 className="font-mono text-xs uppercase tracking-eyebrow text-slate font-bold">
+                            {table.label}
+                          </h3>
+                        )}
+                        <SpecTable columns={table.columns} data={table.rows} />
+                        <p className="font-mono text-xs text-slate italic pt-1">
+                          * {COA_FOOTNOTE}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              ) : (
+                <div className="bg-linen border border-rule p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <p className="font-body text-base text-slate leading-relaxed font-light">
+                    Specifications are issued per product on request.
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="font-display text-xs uppercase tracking-wider font-bold text-amber hover:text-ink transition-colors inline-flex items-center gap-1.5 shrink-0"
+                  >
+                    <span>Request Specifications</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              )}
             </div>
 
             {/* ITEM 8: Applications & Packing */}

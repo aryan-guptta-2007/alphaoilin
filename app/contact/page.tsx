@@ -26,7 +26,7 @@ export default function ContactPage() {
       />
 
       {/* Contact Main Grid Section */}
-      <section className="py-8 sm:py-11 lg:py-16 bg-paper">
+      <section className="py-8 sm:py-11 lg:py-16 pb-[88px] lg:pb-16 bg-paper">
         <Container>
           {/* Office Details Block sits above the form on mobile (grid-cols-1) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start w-full min-w-0 max-w-full">
