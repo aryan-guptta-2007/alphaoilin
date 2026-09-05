@@ -38,7 +38,7 @@ export default function Home() {
                 </h1>
 
                 <p className="font-body text-slate text-base sm:text-[17px] leading-relaxed font-light max-w-[65ch] max-w-full">
-                  Hamburg Refined Oil Products Trading LLC is a Dubai energy trading firm. We deliver virgin base oils, industrial lubricants, and gas oil from Gulf refineries to international ports.
+                  Hamburg for Refined Oil Products Trading LLC is the Dubai trading arm of the United Oil group, refining in Basra, Iraq. We deliver virgin base oils, industrial lubricants, and gas oil to international ports.
                 </p>
 
                 {/* Both CTAs full width on mobile, stacked with 12px gap, 44px min tap height */}

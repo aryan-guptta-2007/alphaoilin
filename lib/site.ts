@@ -22,6 +22,7 @@ export const siteConfig = {
   ],
   companyLinks: [
     { name: "Company Profile", href: "/about" },
+    { name: "United Oil group", href: "/about#group" },
     { name: "Mission & Principles", href: "/mission-vision" },
     { name: "Careers & Openings", href: "/careers" },
     { name: "Contact Desk", href: "/contact" },

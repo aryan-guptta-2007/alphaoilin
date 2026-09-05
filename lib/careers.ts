@@ -31,11 +31,11 @@ export const openRoles: CareerRole[] = [
     department: "Quality Assurance & Technical Compliance",
     location: "Dubai, UAE / Jebel Ali Port Desk",
     type: "Full-Time / On-Site",
-    experience: "4+ Years ASTM Petroleum Testing",
+    experience: "4+ Years Petroleum Quality Testing",
     summary:
-      "Oversees laboratory sampling, ASTM test method validation, and independent inspection reports for incoming and outgoing bulk fuel/base oil parcels.",
+      "Oversees laboratory sampling, test method validation, and independent inspection reports for incoming and outgoing bulk fuel/base oil parcels.",
     responsibilities: [
-      "Review independent lab batch reports (SGS, Saybolt, Intertek) for kinematic viscosity, flash point, and sulfur content.",
+      "Review independent lab batch reports for kinematic viscosity, flash point, and sulfur content.",
       "Maintain COA verification protocol for every commercial vessel load.",
       "Audit terminal storage tanks and blending operations for zero contamination.",
     ],

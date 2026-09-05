@@ -1,7 +1,15 @@
+/**
+ * FORBIDDEN UNVERIFIED CLAIMS (Do not reinstate until client confirms with documentation):
+ * - Specific test methods: ASTM, EN test methods, ISO standards (e.g., ASTM D445, EN 590, EN 12591)
+ * - Third-party inspection firms: SGS, Saybolt, Intertek (use generic "an independent inspection agency")
+ * - Quality/Management Certifications: ISO 9001, ISO 14001, ISO 45001
+ * - Stock warehouse photos not belonging to the company
+ */
+
 import React from "react";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/ui/PageHero";
 import { howWeWorkSteps } from "@/lib/products";
 import type { Metadata } from "next";
@@ -61,28 +69,13 @@ export default function AboutPage() {
                   </div>
                   <div className="border-l-2 border-flame pl-4 py-1">
                     <h4 className="font-display font-bold text-ink text-base">Independent Laboratory Testing</h4>
-                    <p className="max-w-[65ch] max-w-full">Every bulk parcel is sampled and tested by independent inspection agencies (SGS, Saybolt, Intertek) before loading.</p>
+                    <p className="max-w-[65ch] max-w-full">Every bulk parcel is sampled and tested by an independent inspection agency before loading.</p>
                   </div>
                   <div className="border-l-2 border-moss pl-4 py-1">
                     <h4 className="font-display font-bold text-ink text-base">Standardized Packaging</h4>
                     <p className="max-w-[65ch] max-w-full">Logistics via flexitanks, ISO tank containers, steel drums, or vessel chartering based on discharge port capability.</p>
                   </div>
                 </div>
-              </div>
-
-              {/* Steel Drums Warehouse Photo */}
-              <div
-                className="relative w-full max-w-full aspect-[3/2] overflow-hidden border border-rule min-h-[240px]"
-                style={{ position: "relative", aspectRatio: "3/2" }}
-              >
-                <Image
-                  src="/images/steel-drums.jpg"
-                  alt="Steel drums stacked in warehouse facility"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
-                  className="object-cover"
-                />
               </div>
             </div>
           </div>
@@ -102,7 +95,7 @@ export default function AboutPage() {
               </p>
               <div className="font-mono text-xs text-amber uppercase tracking-eyebrow border-t border-rule pt-4 flex flex-col gap-2 font-semibold">
                 <span>✓ CERTIFICATE OF ANALYSIS ON EVERY PARCEL</span>
-                <span>✓ ASTM & EN TEST METHODS</span>
+                <span>✓ BATCH TEST RESULTS ON EVERY PARCEL</span>
                 <span>✓ BATCH RETENTION SAMPLES</span>
               </div>
             </div>
@@ -159,6 +152,72 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Group Section: Part of the United Oil group */}
+      <section id="group" className="py-11 lg:py-16 bg-linen border-b border-rule">
+        <Container>
+          <div className="flex flex-col gap-8 lg:gap-10 w-full min-w-0 max-w-full">
+            <div className="flex flex-col gap-4 max-w-[65ch] max-w-full">
+              <Eyebrow className="text-slate">PARENT COMPANY</Eyebrow>
+              <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-[34px] text-ink tracking-tight">
+                Part of the United Oil group
+              </h2>
+              <div className="flex flex-col gap-4 font-body text-slate text-base sm:text-[17px] leading-relaxed font-light">
+                <p>
+                  Hamburg for Refined Oil Products Trading LLC is the Dubai trading arm of the United Oil group. The group was established in 2018 and operates on three functions: sourcing, refining and trading petroleum and petrochemical products.
+                </p>
+                <p>
+                  Refining and production are carried out at the group&apos;s facilities in Basra, Iraq, which include a hybrid petrochemical complex, a laboratory, and an R&amp;D division. The group operates warehousing at Safwan and a fleet of tankers, road tankers and ISO tanks for product movement across the UAE, Iraq, Saudi Arabia, Kuwait and India.
+                </p>
+                <p>
+                  Trading from Dubai gives buyers a Gulf contracting point, with product coming from the group&apos;s own refining operations rather than the open market.
+                </p>
+              </div>
+            </div>
+
+            {/* Three-item model: Source, Refine, Trade */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch w-full min-w-0 max-w-full pt-2">
+              <div className="bg-card border border-rule p-6 sm:p-7 flex flex-col gap-3">
+                <span className="font-mono text-xs font-bold uppercase tracking-eyebrow text-amber">
+                  FUNCTION 01
+                </span>
+                <h3 className="font-display font-bold text-xl text-ink">
+                  Source
+                </h3>
+                <p className="font-body text-slate text-base font-light leading-relaxed">
+                  Direct crude and feedstock sourcing from regional production to feed group refining infrastructure.
+                </p>
+              </div>
+
+              <div className="bg-card border border-rule p-6 sm:p-7 flex flex-col gap-3">
+                <span className="font-mono text-xs font-bold uppercase tracking-eyebrow text-amber">
+                  FUNCTION 02
+                </span>
+                <h3 className="font-display font-bold text-xl text-ink">
+                  Refine
+                </h3>
+                <p className="font-body text-slate text-base font-light leading-relaxed">
+                  Processing and quality blending at the group&apos;s Basra complex with dedicated laboratory testing and R&amp;D.
+                </p>
+              </div>
+
+              <div className="bg-card border border-rule p-6 sm:p-7 flex flex-col gap-3">
+                <span className="font-mono text-xs font-bold uppercase tracking-eyebrow text-amber">
+                  FUNCTION 03
+                </span>
+                <h3 className="font-display font-bold text-xl text-ink">
+                  Trade
+                </h3>
+                <p className="font-body text-slate text-base font-light leading-relaxed">
+                  Commercial contracting and international distribution managed through the Dubai trading desk.
+                </p>
+              </div>
+            </div>
+
+            {/* TODO: Add ISO certification content here once client confirms publication approval */}
           </div>
         </Container>
       </section>
